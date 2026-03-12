@@ -1,0 +1,10 @@
+{"qid":"text_001","query":"How does Harry catch his first Golden Snitch?","query_type":"A","gold_sources":["Book1.txt"]}
+{"qid":"text_002","query":"What creature is lurking in the Chamber of Secrets?","query_type":"A","gold_sources":["Book2.txt"]}
+{"qid":"text_003","query":"Who reveals the secret of the Marauder's Map to Harry?","query_type":"A","gold_sources":["Book3.txt"]}
+{"qid":"text_004","query":"Which champions are selected for the Triwizard Tournament?","query_type":"A","gold_sources":["Book4.txt"]}
+{"qid":"text_005","query":"What is the prophecy kept in the Department of Mysteries?","query_type":"B","gold_sources":["Book5.txt"]}
+{"qid":"text_006","query":"How does Dumbledore destroy the ring Horcrux?","query_type":"B","gold_sources":["Book6.txt"]}
+{"qid":"text_007","query":"What happens during the Battle of Hogwarts?","query_type":"B","gold_sources":["Book7.txt"]}
+{"qid":"text_008","query":"Who is Dudley Dursley and how does he treat Harry?","query_type":"C","gold_sources":["Book1.txt","Book5.txt","Book7.txt"]}
+{"qid":"text_009","query":"Why was Harry hiding outside number four Privet Drive in the summer?","query_type":"B","gold_sources":["Book5.txt"]}
+{"qid":"text_010","query":"What are the Deathly Hallows according to the Tale of the Three Brothers?","query_type":"C","gold_sources":["Book7.txt"]}

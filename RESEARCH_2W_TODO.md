@@ -3,6 +3,7 @@
 기준 문서: `route.pdf`  
 기간: 2주 (14일)  
 목표: 설계 수준에서 멈춘 연구를 실행 가능한 실험/결과 수준으로 완료
+상태 갱신: 2026-03-12 (실제 산출물 기준으로 재정리)
 
 ## 성공 기준 (2주 종료 시점)
 - 텍스트/코드 도메인 모두에서 baseline 대비 구조 인식 청킹 실험 완료
@@ -12,111 +13,188 @@
   - 3단계(생성): RAGAS 기반 `Answer Relevance`, `Faithfulness`
 - 재현 가능한 실험 스크립트 + 결과표/그래프 + 분석 노트 확보
 
-## Week 1 (구현 + 실험 준비)
+## 운영 방식
+- 공통 기반 작업을 먼저 고정하고, 이후 `텍스트 트랙`과 `코드 트랙`을 분리해서 병렬 관리
+- 체크 기준은 "문서에 적혀 있음"이 아니라 "저장소 산출물로 확인 가능함"
+- 상태 라벨:
+  - 완료: 실제 파일/로그/스크립트 존재
+  - 진행중: 부분 결과 또는 초안 존재
+  - 미착수: 산출물/근거 없음
 
-### Day 1: 실험 스펙 고정
+## 공통 기반 트랙
+
+### A. 실험 스펙/규칙
 - [ ] 실험 질문 3개 확정
   - [ ] Q1: 작은 chunk size에서 성능 저하를 구조 인식 청킹이 완화하는가?
   - [ ] Q2: 코드 도메인에서 구조 보존 지표가 유의미하게 개선되는가?
   - [ ] Q3: 동일 인덱스로 다중 태스크 재사용성이 올라가는가?
-- [ ] baseline/제안 기법 정의 문서화
-  - [ ] Baseline A: fixed-size
-  - [ ] Baseline B: line-based (코드), token/문장 기반(텍스트)
-  - [ ] Proposed: structure-aware
+- [x] baseline/제안 기법 정의 문서화
+  - [x] Baseline A: fixed-size
+  - [x] Baseline B: line-based (코드), token/문장 기반(텍스트)
+  - [x] Proposed: structure-aware
 - [ ] 평가 지표 계산 규칙 고정
-- 산출물: `RAG_PIPELINE.md` 내 실험 규칙 섹션 업데이트
+  - 진행중: 검색 지표(`HitRate@K`, `MRR`)와 실행 기본 파라미터는 반영됨
+  - 미완료: 구조 지표/생성 지표 계산 규칙 문서화 필요
+- [x] 산출물: `RAG_PIPELINE.md` 갱신 완료
 
-### Day 2: 데이터셋 정제/분할
-- [ ] 텍스트 데이터셋(Harry Potter) 학습/평가 분리 규칙 정의
-- [ ] 코드 데이터셋(Legacy Python) 파일 단위 메타데이터 표준화
-- [x] 평가용 질의셋 초안 작성 (텍스트 30+, 코드 30+ 권장)
-- 산출물: `data/eval/queries_text.jsonl`, `data/eval/queries_code.jsonl`
-
-### Day 3: Baseline chunker 구현
+### B. 공통 파이프라인
 - [x] fixed-size chunker 파라미터화 (`size`, `overlap`)
 - [x] line-based/token-based chunker 구현
 - [x] chunk 메타데이터 공통 스키마 통일
-- 산출물: baseline chunk 생성 스크립트 + 샘플 출력
-
-### Day 4: Structure-aware chunker (텍스트)
-- [x] 문단/챕터 경계 기반 청킹 구현
-- [x] source/book/chapter metadata 보존
-- [ ] 작은 chunk size 조건에서도 문맥 유지 정책 추가
-- 산출물: 텍스트 구조 인식 chunk 결과
-
-### Day 5: Structure-aware chunker (코드, AST)
-- [x] Python `ast` 기반 class/function/control block 청킹
-- [x] 부모 컨텍스트 메타데이터 주입
-  - [x] 예: `Parent: Class X > def y`
-- [x] orphan 코드 탐지 로직(초기 버전) 구현
-- 산출물: 코드 구조 인식 chunk 결과
-
-### Day 6: 인덱싱/검색 파이프라인 통합
 - [x] Embedding 인덱스(FAISS) 빌드 자동화
 - [x] BM25 인덱스 구성
 - [x] RRF fusion 점수 계산 통합
 - [x] chunking 방식별 동일 인터페이스로 검색 가능하게 정리
-- 산출물: `scripts/run_index_and_retrieve.*` (형식은 프로젝트 표준 따름)
+- [x] 산출물: `scripts/chunk_dataset.py`, `scripts/build_index.py`, `scripts/search_with_metadata.py`, `scripts/eval_retrieval.py`
 
-### Day 7: 스모크 테스트 + 수정
+### C. 공통 검증
 - [x] 샘플 질의로 end-to-end 동작 검증
 - [x] 성능/오류 로그 수집
 - [x] 깨지는 케이스(파싱 실패, 빈 청크, 메타데이터 누락) 수정
-- 산출물: `results/smoke_report.md`
+- [x] 산출물: `results/smoke_report.md`
 
-## Week 2 (본실험 + 분석 + 정리)
+## 텍스트 트랙
 
-### Day 8: 본실험 1차 (텍스트 도메인)
-- [ ] chunk size 조건 2~3개로 baseline/proposed 일괄 실행
-- [ ] 1~3단계 평가지표 산출 (`HitRate@K`, `MRR`, `경계 절단율(Boundary Truncation Ratio)`, `RAGAS 지표`)
-- [ ] 실패 질의 사례 수집
-- 산출물: `results/text_metrics.csv`, 실패 사례 노트
+### T1. 데이터셋/질의셋
+- [ ] 텍스트 데이터셋(Harry Potter) 학습/평가 분리 규칙 정의
+- [x] 평가용 질의셋 초안 작성
+- [x] 질의셋 확장 (권장 30+)
+- [x] 산출물: `data/text/eval/queries_text.jsonl`, `data/text/eval/queries_text_main.jsonl`, `data/text/eval/queries_text_benchmark30.jsonl`, `data/text/eval/qrels_text_main.csv`
+  - 현재 상태: 메인 질의셋 + 30문항 벤치마크 + qrels 초안 확보
+- [x] 평가셋 스키마/운영 README 정리
+  - 산출물: `data/text/eval/README.md`
+- [x] 텍스트 데이터 품질 점검 스크립트 추가
+  - 산출물: `scripts/audit_text_data.py`
+- [x] paragraph-level gold labeling용 코퍼스 생성 파이프라인 구축
+  - 산출물: `scripts/build_paragraph_corpus.py`, `data/text/processed/paragraphs.json`
+- [x] benchmark query용 gold paragraph 후보 자동 추천 파이프라인 구축
+  - 산출물: `scripts/suggest_gold_paragraphs.py`, `data/text/eval/queries_text_benchmark30_suggested.jsonl`
 
-### Day 9: 본실험 2차 (코드 도메인)
-- [ ] 코드 질의셋으로 retrieval + 구조 지표 계산
-- [ ] 1~3단계 평가지표 산출 (`Syntax Error Rate`, `Orphan Code Ratio`, `RAGAS 지표` 등)
+### T2. 텍스트 구조 인식 청킹
+- [x] 문단/챕터 경계 기반 청킹 구현
+- [x] source/book/chapter metadata 보존
+- [ ] 작은 chunk size 조건에서도 문맥 유지 정책 추가
+- [x] 산출물: `data/processed/chunks_structure_text.json`, `data/processed/chunks_structure_text_metadata.json`
+
+### T3. 텍스트 본실험
+- [x] chunk size 조건 2~3개로 baseline/proposed 일괄 실행
+- [x] 검색 지표 산출 (`HitRate@K`, `MRR`)
+- [ ] 구조 지표 산출 (`Boundary Truncation Ratio`)
+- [ ] 생성 지표 산출 (`Answer Relevance`, `Faithfulness`)
+- [x] 실패 질의 사례 수집
+- [x] 텍스트 실험 자동화 스크립트 구축 (`E1`, `E2`)
+  - 산출물: `scripts/run_text_experiments.py`
+- [x] 30문항 benchmark 결과 요약 리포트 작성
+  - 산출물: `results/text_q30_experiment_report.md`, `results/text_experiment_summary_q30.csv`, `results/text_q30_metrics_summary.csv`
+- [x] 실험 실행/비교 가이드 문서화
+  - 산출물: `TEXT_EXPERIMENTS.md`
+- [ ] 산출물: `results/text_metrics.csv`, 실패 사례 노트
+  - 진행중: `results/text_fixed_metrics.json`, `results/text_structure_text_metrics.json`, `results/text_experiment_summary.csv`, `results/text_experiment_summary_q30.csv`, `results/text_q30_experiment_report.md`, `results/detailed_eval_fixed.md`
+
+### T4. 텍스트 분석/정리
+- [ ] baseline/proposed 차이 분석
+- [ ] chunk size 민감도 분석
+- [ ] 텍스트 실패 케이스 분류 (질의 유형/길이/경계 의존성)
+- [ ] 산출물: `results/tables/text_*`, `results/figures/text_*`, `docs/analysis_notes.md`
+
+## 코드 트랙
+
+### C1. 데이터셋/질의셋
+- [x] 코드 데이터셋 파일 단위 메타데이터 표준화
+- [x] 평가용 질의셋 초안 작성
+- [ ] 실제 코드 데이터셋 확장
+- [ ] 질의셋 확장 (권장 30+)
+- [x] 산출물: `data/text/eval/queries_code.jsonl`
+  - 현재 상태: 5개 질의, placeholder 중심
+
+### C2. 코드 구조 인식 청킹
+- [x] Python `ast` 기반 class/function/control block 청킹
+- [x] 부모 컨텍스트 메타데이터 주입
+  - [x] 예: `Parent: Class X > def y`
+- [x] orphan 코드 탐지 로직(초기 버전) 구현
+- [x] 산출물: `data/processed/chunks_structure_code.json`
+
+### C3. 코드 본실험
+- [ ] 코드 질의셋으로 retrieval 평가
+- [ ] 구조 지표 산출 (`Syntax Error Rate`, `Orphan Code Ratio`, `Executable Chunk Ratio`)
+- [ ] 생성 지표 또는 코드 QA 품질 평가
 - [ ] baseline/proposed 차이 로그 저장
-- 산출물: `results/code_metrics.csv`
+- [ ] 산출물: `results/code_metrics.csv`
+  - 현재 상태: 결과 파일 없음
 
-### Day 10: 재사용성 실험
+### C4. 코드 분석/정리
+- [ ] 부모 컨텍스트 보존 효과 분석
+- [ ] 잘린 코드 조각이 검색 품질에 미치는 영향 분석
+- [ ] 코드 실패 케이스 분류 (함수형 질의/예외 처리/호출 체인)
+- [ ] 산출물: `results/tables/code_*`, `results/figures/code_*`, `docs/analysis_notes.md`
+
+## 공통 확장 트랙
+
+### X1. 재사용성 실험
 - [ ] 동일 인덱스로 2개 이상 태스크 수행
   - [ ] 예: QA + 요약/문서화
 - [ ] 태스크 전환 시 성능 유지/저하 기록
-- 산출물: `results/reuse_metrics.md`
+- [ ] 산출물: `results/reuse_metrics.md`
 
-### Day 11: 어블레이션
+### X2. 어블레이션
 - [ ] 메타데이터 제거/유지 비교
 - [ ] RRF on/off 비교
 - [ ] overlap/size 민감도 비교
-- 산출물: `results/ablation.csv`
+- [ ] 산출물: `results/ablation.csv`
 
-### Day 12: 결과 시각화
+### X3. 결과 시각화
 - [ ] 핵심 표 3개 작성 (텍스트/코드/재사용성)
 - [ ] 핵심 그래프 2~4개 작성 (chunk size vs 성능 중심)
 - [ ] figure 캡션 초안 작성
-- 산출물: `results/figures/*`, `results/tables/*`
+- [ ] 산출물: `results/figures/*`, `results/tables/*`
 
-### Day 13: 해석 및 한계 정리
+### X4. 해석 및 최종 패키징
 - [ ] 왜 개선되는지 구조적 근거 정리
-- [ ] 실패 케이스 분류 (질의 유형/도메인/길이)
 - [ ] 위협요인(데이터 편향, 질의셋 규모, 일반화 한계) 명시
-- 산출물: `docs/analysis_notes.md`
-
-### Day 14: 최종 패키징
 - [ ] 재현 실행 순서 문서화 (`README` 또는 `RAG_PIPELINE.md` 갱신)
 - [ ] 결과 요약 1페이지 작성
 - [ ] 발표/논문용 핵심 기여 3~5줄 정제
-- 산출물: 최종 요약본 + 재현 가이드
+- [ ] 산출물: `docs/analysis_notes.md`, 최종 요약본 + 재현 가이드
+
+## 추가 활동 로그 (2026-03-12 반영)
+
+### A. 텍스트 데이터/평가셋 정리
+- [x] Harry Potter 텍스트 트랙 전용 경로(`data/text/raw`, `data/text/processed`, `data/text/eval`) 기준으로 데이터셋 구조 정리
+- [x] 메인 질의셋, 30문항 벤치마크, 100문항 템플릿, qrels 파일 구성
+- [x] 평가셋 설명 문서 작성
+
+### B. 텍스트 실험 자동화/분석
+- [x] `E1`(전략 비교) 자동 실행 스크립트 작성
+- [x] `E2`(chunk size sweep) 자동 실행 스크립트 작성
+- [x] 30문항 기준 결과 요약 리포트 작성 및 CSV 요약 저장
+- [x] 라이브 재평가 결과 저장
+  - 산출물: `results/text_fixed_metrics_live.json`, `results/text_fixed_metrics_live_q30.json`
+
+### C. 정답 라벨링 보조 작업
+- [x] paragraph ID 기반 코퍼스 생성 스크립트 작성
+- [x] BM25 기반 gold paragraph 후보 추천 스크립트 작성
+- [x] 질의셋 라벨링 워크플로 문서화
+
+### D. 운영/검증 보조 작업
+- [x] 텍스트 데이터 audit 스크립트 작성
+- [x] interactive 질의용 CLI 스크립트 작성
+  - 산출물: `question.py`
+- [x] TODO/실험 문서/파이프라인 문서 최신화
+  - 관련 파일: `RESEARCH_2W_TODO.md`, `RAG_PIPELINE.md`, `README.md`, `TEXT_EXPERIMENTS.md`
+
+### E. 파이프라인 동기화 수정
+- [x] 텍스트 실험 경로와 평가 흐름에 맞춰 파이프라인 관련 파일 수정
+  - 관련 파일: `config.py`, `main.py`, `scripts/build_index.py`, `scripts/chunk_dataset.py`, `scripts/chunk_papers.py`, `scripts/eval_detailed_report.py`, `scripts/eval_retrieval.py`, `scripts/search_with_metadata.py`
 
 ## 운영 규칙 (권장)
 - 하루 시작: 당일 목표 3개만 고정
 - 하루 종료: 지표/로그/실패 사례를 반드시 파일로 남김
 - 실험 실행 시: 모든 run에 `timestamp`, `chunking_mode`, `chunk_size`, `overlap` 기록
 
-## 즉시 실행 우선순위 (오늘)
-1. [완료] `RAG_PIPELINE.md`에 실험 규칙 고정
-2. [완료] 평가 질의셋 파일 뼈대 생성 (`data/eval/*.jsonl`)
-3. [완료] baseline/proposed chunker 인터페이스 통일
+## 즉시 실행 우선순위 (현재 기준)
+1. [진행중] 텍스트 트랙: 구조/생성 지표 추가 + 요약 결과를 `text_metrics.csv` 형태로 정리
+2. [미착수] 코드 트랙: placeholder 질의셋/데이터셋을 실제 실험셋으로 교체
+3. [미착수] 공통 확장: 구조 지표/생성 지표 계산 규칙 문서화
 
 ## 완료 로그 (2026-02-15)
 - [완료] `scripts/chunk_dataset.py` 추가: `fixed|line|token|structure_text|structure_code` 통합 인터페이스 구축

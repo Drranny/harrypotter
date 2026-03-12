@@ -1,0 +1,31 @@
+query_id,query,query_type,book,chapter,expected_entity_or_paragraph,difficulty
+1,Who killed Dumbledore?,FACT,6,unknown,Snape kills Dumbledore on the Astronomy Tower,easy
+2,Who is Harry’s godfather?,FACT,3,unknown,Sirius Black,easy
+3,What house does Luna Lovegood belong to?,FACT,5,unknown,Ravenclaw,easy
+4,Who teaches Potions in the first Harry Potter book?,FACT,1,unknown,Severus Snape,easy
+5,Who kills Bellatrix Lestrange?,FACT,7,unknown,Molly Weasley,easy
+6,Who was the Half-Blood Prince?,FACT,6,unknown,Severus Snape,easy
+7,Who gives Harry the Invisibility Cloak?,FACT,1,unknown,Dumbledore (from James Potter),medium
+8,What is the name of Harry’s owl?,FACT,1,unknown,Hedwig,easy
+9,Who is the headmaster after Dumbledore dies?,FACT,6,unknown,Severus Snape,easy
+10,Who destroys Tom Riddle’s diary?,FACT,2,unknown,Harry Potter,easy
+11,Why does Snape protect Harry throughout the series?,EXPLANATION,7,unknown,Snape loved Lily Potter and protects Harry because he promised Dumbledore,medium
+12,Why is Harry the master of the Elder Wand?,EXPLANATION,7,unknown,Harry disarms Draco who previously disarmed Dumbledore,medium
+13,Why does Voldemort create Horcruxes?,EXPLANATION,6,unknown,To split his soul and become immortal,medium
+14,Why does Harry survive the killing curse as a baby?,EXPLANATION,1,unknown,Lily sacrifices herself which creates magical protection,medium
+15,Why does Voldemort fear Dumbledore?,EXPLANATION,5,unknown,Dumbledore is the most powerful wizard opposing him,medium
+16,Why is the prophecy important to Voldemort?,EXPLANATION,5,unknown,It predicts someone with the power to defeat him,medium
+17,Why does Sirius Black escape from Azkaban?,EXPLANATION,3,unknown,To protect Harry from Peter Pettigrew,medium
+18,Why does Dumbledore avoid telling Harry the prophecy earlier?,EXPLANATION,5,unknown,To protect Harry’s childhood,medium
+19,Why does Voldemort choose Harry as his enemy?,EXPLANATION,5,unknown,Harry fits the prophecy description,medium
+20,Why are Horcruxes difficult to destroy?,EXPLANATION,2,unknown,They require powerful magical objects like basilisk venom,medium
+21,How does Harry ultimately defeat Voldemort?,MULTI_CONTEXT,7,unknown,Voldemort’s curse rebounds because the Elder Wand belongs to Harry,hard
+22,How does Harry survive Voldemort’s curse in the forest?,MULTI_CONTEXT,7,unknown,Harry carries part of Voldemort’s soul which is destroyed instead,hard
+23,What events lead to Sirius Black being imprisoned?,MULTI_CONTEXT,3,unknown,Pettigrew frames Sirius after betraying the Potters,hard
+24,How does Dumbledore plan Voldemort’s defeat?,MULTI_CONTEXT,6,unknown,Destroy Horcruxes and allow Harry to confront Voldemort,hard
+25,How does Snape secretly help Harry during the series?,MULTI_CONTEXT,7,unknown,Through protecting him, guiding him, and working with Dumbledore,hard
+26,How does Voldemort regain his body?,MULTI_CONTEXT,4,unknown,Through a dark ritual using Harry’s blood,hard
+27,What events lead to the discovery of Horcruxes?,MULTI_CONTEXT,6,unknown,Dumbledore investigates Tom Riddle’s past,hard
+28,How does Harry obtain the Deathly Hallows?,MULTI_CONTEXT,7,unknown,Cloak from father, stone from snitch, wand from Draco,hard
+29,What events reveal Snape’s true loyalty?,MULTI_CONTEXT,7,unknown,His memories shown in the Pensieve,hard
+30,How is Peter Pettigrew revealed to be alive?,MULTI_CONTEXT,3,unknown,Ron’s rat Scabbers is exposed as Pettigrew,hard

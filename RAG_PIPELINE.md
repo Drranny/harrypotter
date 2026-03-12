@@ -3,7 +3,7 @@
 본 문서는 실행 방법, 실험 모드, 협업 시 고정 규칙을 한 곳에 모은 문서입니다.
 
 ## 1. 파이프라인 개요
-- 데이터 준비: `data/raw`(텍스트), `data/raw_code`(코드, 선택)
+- 데이터 준비: `data/text/raw`(텍스트), `data/raw_code`(코드, 선택)
 - 전처리: `scripts/chunk_papers.py` 또는 `scripts/chunk_dataset.py`
 - 색인: `scripts/build_index.py`
 - 질의 실행: `main.py` (Hybrid Retriever + EXAONE)
@@ -14,9 +14,9 @@
 python3 scripts/chunk_papers.py
 
 # 2) 실험 모드 전처리
-python3 scripts/chunk_dataset.py --mode fixed --output data/processed/chunks_fixed.json
-python3 scripts/chunk_dataset.py --mode structure_text --output data/processed/chunks_structure_text.json
-python3 scripts/chunk_dataset.py --mode structure_code --output data/processed/chunks_structure_code.json
+python3 scripts/chunk_dataset.py --mode fixed --output data/text/processed/chunks_fixed.json
+python3 scripts/chunk_dataset.py --mode structure_text --output data/text/processed/chunks_structure_text.json
+python3 scripts/chunk_dataset.py --mode structure_code --output data/text/processed/chunks_structure_code.json
 
 # 3) 인덱스 구축
 python3 scripts/build_index.py
@@ -28,14 +28,14 @@ python3 main.py --query "Who is Dudley?" --k 3
 ## 3. 모드별 인덱스(실험용)
 ```bash
 python3 scripts/build_index.py \
-  --chunks-path data/processed/chunks_fixed.json \
+  --chunks-path data/text/processed/chunks_fixed.json \
   --index-path vector_db/faiss_fixed.index \
-  --metadata-path data/processed/chunks_fixed_metadata.json
+  --metadata-path data/text/processed/chunks_fixed_metadata.json
 
 python3 scripts/build_index.py \
-  --chunks-path data/processed/chunks_structure_text.json \
+  --chunks-path data/text/processed/chunks_structure_text.json \
   --index-path vector_db/faiss_structure_text.index \
-  --metadata-path data/processed/chunks_structure_text_metadata.json
+  --metadata-path data/text/processed/chunks_structure_text_metadata.json
 ```
 
 ## 4. 질의 실행(필터 포함)
@@ -54,8 +54,8 @@ python3 main.py \
 ```bash
 # 1) 간단 지표 평가 (HitRate@K, MRR)
 python3 scripts/eval_retrieval.py \
-  --queries data/eval/queries_text.jsonl \
-  --chunks data/processed/chunks_fixed_metadata.json \
+  --queries data/text/eval/queries_text_main.jsonl \
+  --chunks data/text/processed/chunks_fixed_metadata.json \
   --index vector_db/faiss_fixed.index \
   --k 5 \
   --out results/text_fixed_metrics.json
@@ -63,8 +63,8 @@ python3 scripts/eval_retrieval.py \
 # 2) 상세 리포트 평가 (쿼리/세부점수/RRF 비율/답변 필드)
 python3 scripts/eval_detailed_report.py \
   --mode fixed \
-  --queries data/eval/queries_text.jsonl \
-  --chunks data/processed/chunks_fixed_metadata.json \
+  --queries data/text/eval/queries_text_main.jsonl \
+  --chunks data/text/processed/chunks_fixed_metadata.json \
   --index vector_db/faiss_fixed.index \
   --out-md results/detailed_eval_fixed.md \
   --out-json results/detailed_eval_fixed.json \
@@ -74,13 +74,13 @@ python3 scripts/eval_detailed_report.py \
 ```
 
 ## 6. 데이터/산출물 경로
-- 텍스트 입력: `data/raw`
+- 텍스트 입력: `data/text/raw`
 - 코드 입력(선택): `data/raw_code` (`.py`)
-- 기본 청크: `data/processed/chunks.json`
-- 실험 청크: `data/processed/chunks_<mode>.json`
+- 기본 청크: `data/text/processed/chunks.json`
+- 실험 청크: `data/text/processed/chunks_<mode>.json`
 - 기본 인덱스: `vector_db/faiss.index`
 - 평가 질의셋:
-  - `data/eval/queries_text.jsonl`
+  - `data/text/eval/queries_text_main.jsonl`
   - `data/eval/queries_code.jsonl`
 - 평가 결과:
   - `results/*.json`

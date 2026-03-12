@@ -1,0 +1,5 @@
+{"qid":"code_001","domain":"code","query":"OrderService.validate_order 함수는 어떤 검증을 수행하나?","gold_symbols":["OrderService.validate_order"],"gold_sources":[],"difficulty":"easy","notes":"placeholder; add real code dataset later"}
+{"qid":"code_002","domain":"code","query":"한도 초과 시 어떤 예외를 발생시키나?","gold_symbols":[],"gold_sources":[],"difficulty":"easy","notes":"placeholder"}
+{"qid":"code_003","domain":"code","query":"결제 처리 전 필수 선행 조건은 무엇인가?","gold_symbols":[],"gold_sources":[],"difficulty":"medium","notes":"placeholder"}
+{"qid":"code_004","domain":"code","query":"재시도 로직이 있는 함수는 어디인가?","gold_symbols":[],"gold_sources":[],"difficulty":"medium","notes":"placeholder"}
+{"qid":"code_005","domain":"code","query":"외부 API 호출 실패를 처리하는 블록은 어디인가?","gold_symbols":[],"gold_sources":[],"difficulty":"hard","notes":"placeholder"}

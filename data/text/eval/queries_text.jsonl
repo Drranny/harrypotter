@@ -1,0 +1,10 @@
+{"qid": "text_001", "query": "How does Harry catch his first Golden Snitch?", "gold_sources": ["Book1.txt"]}
+{"qid": "text_002", "query": "What creature is lurking in the Chamber of Secrets?", "gold_sources": ["Book2.txt"]}
+{"qid": "text_003", "query": "Who reveals the secret of the Marauder's Map to Harry?", "gold_sources": ["Book3.txt"]}
+{"qid": "text_004", "query": "Which champions are selected for the Triwizard Tournament?", "gold_sources": ["Book4.txt"]}
+{"qid": "text_005", "query": "What is the prophecy kept in the Department of Mysteries?", "gold_sources": ["Book5.txt"]}
+{"qid": "text_006", "query": "How does Dumbledore destroy the ring Horcrux?", "gold_sources": ["Book6.txt"]}
+{"qid": "text_007", "query": "What happens during the Battle of Hogwarts?", "gold_sources": ["Book7.txt"]}
+{"qid": "text_008", "query": "Who is Dudley Dursley and how does he treat Harry?", "gold_sources": ["Book1.txt", "Book5.txt", "Book7.txt"]}
+{"qid": "text_009", "query": "Why was Harry hiding outside number four Privet Drive in the summer?", "gold_sources": ["Book5.txt"]}
+{"qid": "text_010", "query": "What are the Deathly Hallows according to the Tale of the Three Brothers?", "gold_sources": ["Book7.txt"]}

@@ -7,7 +7,7 @@ import os
 import faiss
 import argparse
 import time
-from config import FAISS_INDEX_PATH
+from config import FAISS_INDEX_PATH, LEGACY_PROCESSED_DIR, TEXT_PROCESSED_DIR
 from rag_pipeline.hybrid_retriever import HybridRetriever
 from rag_pipeline.prompt import build_prompt
 from rag_pipeline.rag_chain import rag_answer
@@ -36,11 +36,24 @@ def print_boxed_response(text):
 
 def load_chunks_and_index():
     """청크 데이터와 FAISS 인덱스를 로드합니다."""
-    chunks_path = "data/processed/chunks_metadata.json"
-    if not os.path.exists(chunks_path):
-        chunks_path = "data/processed/chunks.json"
+    processed_dirs = [TEXT_PROCESSED_DIR, LEGACY_PROCESSED_DIR]
+    chunks_path = None
+
+    env_chunks_path = os.getenv("CHUNKS_PATH")
+    if env_chunks_path:
+        chunks_path = env_chunks_path
+    else:
+        for directory in processed_dirs:
+            metadata_path = os.path.join(directory, "chunks_metadata.json")
+            base_path = os.path.join(directory, "chunks.json")
+            if os.path.exists(metadata_path):
+                chunks_path = metadata_path
+                break
+            if os.path.exists(base_path):
+                chunks_path = base_path
+                break
     
-    if not os.path.exists(chunks_path):
+    if not chunks_path or not os.path.exists(chunks_path):
         print(f"[ERROR] Data file not found: {chunks_path}")
         return None, None
     
@@ -59,7 +72,11 @@ def main():
     parser.add_argument("--query", type=str, default="Tell me about Harry Potter", help="User Query")
     parser.add_argument("--filter", type=str, default=None, help="Metadata Filter (JSON)")
     parser.add_argument("--k", type=int, default=3, help="Number of chunks to retrieve")
+    parser.add_argument("--chunks-path", type=str, default=None, help="Override chunks metadata/json path")
     args = parser.parse_args()
+
+    if args.chunks_path:
+        os.environ["CHUNKS_PATH"] = args.chunks_path
 
     print("[INFO] Initializing RAG System Components...")
     chunks, index = load_chunks_and_index()

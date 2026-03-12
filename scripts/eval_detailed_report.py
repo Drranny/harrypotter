@@ -11,8 +11,8 @@ Includes:
 Usage:
 python3 scripts/eval_detailed_report.py \
   --mode fixed \
-  --queries data/eval/queries_text.jsonl \
-  --chunks data/processed/chunks_fixed_metadata.json \
+    --queries data/text/eval/queries_text_main.jsonl \
+    --chunks data/text/processed/chunks_fixed_metadata.json \
   --index vector_db/faiss_fixed.index \
   --out-md results/detailed_eval_fixed.md \
   --out-json results/detailed_eval_fixed.json \

@@ -15,10 +15,19 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rank_bm25 import BM25Okapi
 from ingest.embed import embed_chunks
 from rag_pipeline.retriever import retrieve
-from config import FAISS_INDEX_PATH
+from config import FAISS_INDEX_PATH, LEGACY_PROCESSED_DIR, TEXT_PROCESSED_DIR
+
+
+def _first_existing_path(*candidates: str) -> str:
+    for path in candidates:
+        if os.path.exists(path):
+            return path
+    return candidates[0]
 
 # 청크 로드
-with open("data/processed/chunks.json", "r", encoding="utf-8") as f:
+processed_dir = _first_existing_path(TEXT_PROCESSED_DIR, LEGACY_PROCESSED_DIR)
+chunks_path = os.path.join(processed_dir, "chunks.json")
+with open(chunks_path, "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
 # BM25 인덱스 초기화

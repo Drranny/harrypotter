@@ -6,9 +6,9 @@
 
 사용법:
     python3 scripts/build_index.py
-    python3 scripts/build_index.py --chunks-path data/processed/chunks_structure_text.json \
+    python3 scripts/build_index.py --chunks-path data/text/processed/chunks_structure_text.json \
         --index-path vector_db/faiss_structure_text.index \
-        --metadata-path data/processed/chunks_structure_text_metadata.json
+        --metadata-path data/text/processed/chunks_structure_text_metadata.json
 """
 import os
 import sys
@@ -20,14 +20,23 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import json
 import faiss
 from ingest.embed import embed_chunks
-from config import FAISS_INDEX_PATH
+from config import FAISS_INDEX_PATH, LEGACY_PROCESSED_DIR, TEXT_PROCESSED_DIR
+
+
+def _first_existing_path(*candidates: str) -> str:
+    for path in candidates:
+        if os.path.exists(path):
+            return path
+    return candidates[0]
 
 
 def parse_args():
+    processed_dir = _first_existing_path(TEXT_PROCESSED_DIR, LEGACY_PROCESSED_DIR)
+
     parser = argparse.ArgumentParser(description="Build FAISS index from chunk file")
     parser.add_argument(
         "--chunks-path",
-        default="data/processed/chunks.json",
+        default=os.path.join(processed_dir, "chunks.json"),
         help="Input chunks JSON path",
     )
     parser.add_argument(
@@ -37,7 +46,7 @@ def parse_args():
     )
     parser.add_argument(
         "--metadata-path",
-        default="data/processed/chunks_metadata.json",
+        default=os.path.join(processed_dir, "chunks_metadata.json"),
         help="Output metadata JSON path",
     )
     return parser.parse_args()

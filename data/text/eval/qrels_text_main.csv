@@ -1,0 +1,13 @@
+qid,source_file
+text_001,Book1.txt
+text_002,Book2.txt
+text_003,Book3.txt
+text_004,Book4.txt
+text_005,Book5.txt
+text_006,Book6.txt
+text_007,Book7.txt
+text_008,Book1.txt
+text_008,Book5.txt
+text_008,Book7.txt
+text_009,Book5.txt
+text_010,Book7.txt

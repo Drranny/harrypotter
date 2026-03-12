@@ -10,14 +10,34 @@ from typing import Dict, List
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from config import CHUNK_SIZE, CHUNK_OVERLAP
+from config import (
+    CHUNK_SIZE,
+    CHUNK_OVERLAP,
+    LEGACY_PROCESSED_DIR,
+    LEGACY_RAW_DIR,
+    TEXT_PROCESSED_DIR,
+    TEXT_RAW_DIR,
+)
 
 
 TEXT_FILE_EXTENSIONS = {".txt", ".md"}
 CODE_FILE_EXTENSIONS = {".py"}
 
 
+def _first_existing_path(*candidates: str) -> str:
+    for path in candidates:
+        if os.path.exists(path):
+            return path
+    return candidates[0]
+
+
 def parse_args() -> argparse.Namespace:
+    default_text_input_dir = _first_existing_path(TEXT_RAW_DIR, LEGACY_RAW_DIR)
+    default_output = os.path.join(
+        _first_existing_path(TEXT_PROCESSED_DIR, LEGACY_PROCESSED_DIR),
+        "chunks.json",
+    )
+
     parser = argparse.ArgumentParser(description="Unified dataset chunker")
     parser.add_argument(
         "--mode",
@@ -27,7 +47,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--text-input-dir",
-        default="data/raw",
+        default=default_text_input_dir,
         help="Directory for text dataset files",
     )
     parser.add_argument(
@@ -37,7 +57,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output",
-        default="data/processed/chunks.json",
+        default=default_output,
         help="Output path for chunk list JSON",
     )
     parser.add_argument("--chunk-size", type=int, default=CHUNK_SIZE)

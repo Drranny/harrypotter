@@ -36,3 +36,4 @@
 - 박람회 전달 가이드: `HANDOFF_EXPO.md`
 - 팟 분리 온보딩 가이드: `POD_SPLIT_ONBOARDING.md`
 - 과목용(웹 연동) 온보딩 가이드: `COURSE_ONBOARDING.md`
+- 텍스트 전용 실험 가이드: `TEXT_EXPERIMENTS.md`

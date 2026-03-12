@@ -26,5 +26,10 @@
 - `C`: multi-context reasoning (다중 문맥 추론)
 
 ## Notes
-- 현재 평가 스크립트(`scripts/eval_retrieval.py`)는 `gold_sources`를 기준으로 Hit@K/MRR 계산
-- `queries_text_100_template.jsonl`은 템플릿이므로 실제 논문 실험 전 `gold_sources` 검증 필요
+
+## Split policy
+- retrieval corpus: `data/text/raw/*`
+- dev set: `queries_text_main.jsonl`
+- fixed benchmark test set: `queries_text_benchmark30.jsonl`
+- expansion pool: `queries_text_100_template.jsonl`
+- `queries_text_100_template.jsonl`은 gold label 확정 전 공식 성능 비교에 사용하지 않음

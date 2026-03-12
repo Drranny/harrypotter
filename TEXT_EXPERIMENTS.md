@@ -1,12 +1,16 @@
 # Text Experiments (Harry Potter Only)
 
 ## Data layout (text track)
-- Raw: `data/text/raw`
-- Processed chunks: `data/text/processed`
-- Eval queries: `data/text/eval`
 
 기존 경로(`data/raw`, `data/processed`, `data/eval`)도 유지되지만,
 텍스트 실험은 위 `data/text/*`를 기본으로 사용합니다.
+
+## Split policy (Harry Potter text track)
+- `data/text/raw`: retrieval corpus 전체 본문
+- `data/text/eval/queries_text_main.jsonl`: 빠른 반복 검증용 dev set
+- `data/text/eval/queries_text_benchmark30.jsonl`: 비교/보고용 고정 benchmark test set
+- `data/text/eval/queries_text_100_template.jsonl`: 확장 후보 pool (gold 확정 전 공식 평가 불가)
+- 현재는 supervised fine-tuning용 train split을 따로 두지 않고, corpus/eval query 분리 기준으로 운영합니다.
 
 ## E1 Retrieval experiment
 ```bash

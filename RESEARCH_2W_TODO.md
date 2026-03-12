@@ -56,10 +56,12 @@
 ## 텍스트 트랙
 
 ### T1. 데이터셋/질의셋
-- [ ] 텍스트 데이터셋(Harry Potter) 학습/평가 분리 규칙 정의
-- [x] 평가용 질의셋 초안 작성
-- [x] 질의셋 확장 (권장 30+)
-- [x] 산출물: `data/text/eval/queries_text.jsonl`, `data/text/eval/queries_text_main.jsonl`, `data/text/eval/queries_text_benchmark30.jsonl`, `data/text/eval/qrels_text_main.csv`
+ [x] 텍스트 데이터셋(Harry Potter) 학습/평가 분리 규칙 정의
+  - 규칙 1: `data/text/raw` 전체는 retrieval corpus(검색 대상 본문)로 사용하고, 현재 별도 supervised train split은 두지 않음
+  - 규칙 2: `data/text/eval/queries_text_main.jsonl`은 빠른 반복 검증용 dev 성격의 평가셋으로 사용
+  - 규칙 3: `data/text/eval/queries_text_benchmark30.jsonl`은 비교/보고용 고정 benchmark test set으로 사용
+  - 규칙 4: `data/text/eval/queries_text_100_template.jsonl`은 향후 확장용 query pool이며, gold 라벨 확정 전 공식 평가셋으로 사용하지 않음
+  - 규칙 5: retrieval corpus와 evaluation query set은 파일 레벨로 분리 관리하며, 평가는 `gold_sources` 또는 `gold_paragraph_ids` 기준으로만 수행
   - 현재 상태: 메인 질의셋 + 30문항 벤치마크 + qrels 초안 확보
 - [x] 평가셋 스키마/운영 README 정리
   - 산출물: `data/text/eval/README.md`
@@ -96,6 +98,8 @@
 - [ ] chunk size 민감도 분석
 - [ ] 텍스트 실패 케이스 분류 (질의 유형/길이/경계 의존성)
 - [ ] 산출물: `results/tables/text_*`, `results/figures/text_*`, `docs/analysis_notes.md`
+
+
 
 ## 코드 트랙
 

@@ -18,7 +18,15 @@ method = input("\nSelect (1/2/3) [default: 3]: ").strip() or "3"
 method_map = {"1": "faiss", "2": "bm25", "3": "hybrid"}
 retriever = method_map.get(method, "hybrid")
 
-# Step 2: Choose chunk mode and size
+# Step 2: Choose answer language
+print("\n=== Which answer language do you want? ===")
+print("1) English")
+print("2) Korean")
+language_choice = input("\nSelect (1/2) [default: 1]: ").strip() or "1"
+language_map = {"1": "English", "2": "Korean"}
+answer_language = language_map.get(language_choice, "English")
+
+# Step 3: Choose chunk mode and size
 print("\n=== Which chunk mode/size? ===")
 configs = []
 for mode in ["fixed", "token", "structure_text"]:
@@ -36,8 +44,9 @@ config_idx = int(config_idx) - 1 if config_idx else default_idx - 1
 chosen_mode, chosen_size = configs[config_idx][1], configs[config_idx][2]
 
 print(f"\n→ Using: {retriever} + {chosen_mode}_{chosen_size}")
+print(f"→ Answer language: {answer_language}")
 
-# Step 3: Ask question
+# Step 4: Ask question
 print("\n=== Write your question ===")
 question = input("> ").strip()
 
@@ -87,8 +96,8 @@ print("\n" + "="*80)
 # Generate answer using EXAONE LLM
 print("\n\n🤖 Generating answer from LG AI EXAONE...\n")
 contexts = [doc.get('text', '') for doc in docs]
-prompt = build_prompt(contexts, question)
-answer = rag_answer(prompt)
+prompt = build_prompt(contexts, question, answer_language=answer_language)
+answer = rag_answer(prompt, answer_language=answer_language)
 
 print("\n" + "="*80)
 print("✨ FINAL ANSWER")

@@ -4,7 +4,7 @@ import json
 import os
 import re
 import sys
-from typing import Dict, List
+from typing import Any, Dict, List
 
 # Add project root to Python path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -216,31 +216,115 @@ def split_token(text: str, chunk_size: int, overlap: int) -> List[str]:
     return chunks
 
 
-def split_structure_text(text: str, chunk_size: int, overlap: int) -> List[str]:
+def _sentence_tail(text: str, max_chars: int = 160) -> str:
+    normalized = " ".join(text.split())
+    if not normalized:
+        return ""
+    if len(normalized) <= max_chars:
+        return normalized
+    return normalized[-max_chars:]
+
+
+def _sentence_head(text: str, max_chars: int = 220) -> str:
+    normalized = " ".join(text.split())
+    if not normalized:
+        return ""
+    if len(normalized) <= max_chars:
+        return normalized
+    return normalized[:max_chars]
+
+
+def _augment_with_context(context_text: str, content_text: str, chunk_size: int) -> str:
+    if not context_text:
+        return content_text
+
+    context = _sentence_tail(context_text, max_chars=max(90, chunk_size // 2))
+    if not context:
+        return content_text
+
+    prefix = f"[CTX] {context}\n"
+    # small-size 정책: 길이를 무한히 늘리지 않고, 기존 chunk 대비 최대 1.5배까지만 허용
+    max_len = int(chunk_size * 1.5)
+    if len(prefix) + len(content_text) > max_len:
+        allowed_ctx = max(0, max_len - len(content_text) - len("[CTX] \n"))
+        if allowed_ctx <= 0:
+            return content_text
+        context = context[-allowed_ctx:]
+        prefix = f"[CTX] {context}\n"
+
+    return prefix + content_text
+
+
+def split_structure_text(text: str, chunk_size: int, overlap: int) -> List[Dict[str, Any]]:
     # Keep chapter-like blocks first, then paragraph level.
     chapter_blocks = re.split(r"\n\s*(CHAPTER\s+[A-Z0-9]+.*)\n", text, flags=re.IGNORECASE)
 
-    blocks: List[str] = []
+    blocks: List[Dict[str, str]] = []
     if len(chapter_blocks) <= 1:
-        blocks = [text]
+        blocks = [{"chapter_title": "unknown", "body": text}]
     else:
         i = 1
         while i < len(chapter_blocks):
             title = chapter_blocks[i].strip()
             body = chapter_blocks[i + 1] if i + 1 < len(chapter_blocks) else ""
-            blocks.append(f"{title}\n{body}".strip())
+            blocks.append({"chapter_title": title or "unknown", "body": body})
             i += 2
 
-    chunks: List[str] = []
+    results: List[Dict[str, Any]] = []
     for block in blocks:
-        paragraphs = [p.strip() for p in re.split(r"\n\s*\n", block) if p.strip()]
+        chapter_title = block["chapter_title"]
+        paragraphs = [p.strip() for p in re.split(r"\n\s*\n", block["body"]) if p.strip()]
+        prev_tail = ""
+
         for para in paragraphs:
             if len(para) <= chunk_size:
-                chunks.append(para)
-            else:
-                chunks.extend(split_fixed(para, chunk_size, overlap))
+                chunk_text = para
+                context_augmented = False
+                if chunk_size <= 128 and prev_tail:
+                    chunk_text = _augment_with_context(prev_tail, para, chunk_size)
+                    context_augmented = chunk_text != para
 
-    return [c for c in chunks if c.strip()]
+                results.append(
+                    {
+                        "text": chunk_text,
+                        "metadata": {
+                            "chapter_title": chapter_title,
+                            "context_augmented": context_augmented,
+                            "split_from_long_paragraph": False,
+                            "boundary_truncated": False,
+                        },
+                    }
+                )
+                prev_tail = _sentence_tail(para)
+                continue
+
+            sub_chunks = split_fixed(para, chunk_size, overlap)
+            for idx, sub in enumerate(sub_chunks):
+                context_seed = ""
+                if chunk_size <= 128:
+                    if idx == 0:
+                        context_seed = prev_tail
+                    else:
+                        context_seed = _sentence_head(sub_chunks[idx - 1])
+
+                chunk_text = _augment_with_context(context_seed, sub, chunk_size) if context_seed else sub
+                context_augmented = chunk_text != sub
+
+                results.append(
+                    {
+                        "text": chunk_text,
+                        "metadata": {
+                            "chapter_title": chapter_title,
+                            "context_augmented": context_augmented,
+                            "split_from_long_paragraph": True,
+                            "boundary_truncated": idx < len(sub_chunks) - 1,
+                        },
+                    }
+                )
+
+            prev_tail = _sentence_tail(para)
+
+    return [row for row in results if row.get("text", "").strip()]
 
 
 def _iter_ast_chunks(tree: ast.AST, source: str) -> List[Dict]:
@@ -348,7 +432,7 @@ def chunk_text_file(path: str, mode: str, chunk_size: int, overlap: int) -> List
     base_meta = extract_text_metadata(fname, text)
 
     if mode == "fixed":
-        pieces = split_fixed(text, chunk_size, overlap)
+        pieces: List[Any] = split_fixed(text, chunk_size, overlap)
     elif mode == "line":
         pieces = split_line(text, chunk_size, overlap)
     elif mode == "token":
@@ -360,16 +444,26 @@ def chunk_text_file(path: str, mode: str, chunk_size: int, overlap: int) -> List
 
     rows: List[Dict] = []
     for i, piece in enumerate(pieces):
+        if isinstance(piece, dict):
+            piece_text = str(piece.get("text", ""))
+            piece_meta = piece.get("metadata", {})
+        else:
+            piece_text = str(piece)
+            piece_meta = {}
+
+        if not piece_text.strip():
+            continue
+
         rows.append(
             {
                 "chunk_id": i,
-                "text": piece,
+                "text": piece_text,
                 "source_file": fname,
                 **base_meta,
                 "chunk_mode": mode,
                 "chunk_size": chunk_size,
                 "chunk_overlap": overlap,
-                "metadata": {},
+                "metadata": piece_meta,
             }
         )
     return rows

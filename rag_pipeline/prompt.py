@@ -1,4 +1,4 @@
-def build_prompt(contexts, query):
+def build_prompt(contexts, query, answer_language="English"):
     """
     EXAONE 3.5 맞춤형 RAG 프롬프트 생성
     모델의 특수 태그([|system|], [|user|], [|assistant|]) 구조를 활용
@@ -15,9 +15,9 @@ def build_prompt(contexts, query):
         "Your task is to answer the user's question **ONLY based on the provided Information** below.\n\n"
         "### Strict Rules (You MUST follow):\n"
         "1. **No Outside Knowledge:** Do NOT use your pre-trained knowledge. Only use the text in 'Information'.\n"
-        "2. **No Hallucination:** If the answer is not in the Information, strictly say: '제공된 문서에서 해당 정보를 찾을 수 없습니다.' Do not make up an answer.\n"
+        "2. **No Hallucination:** If the answer is not in the Information, strictly say: 'The provided documents do not contain the answer.' Do not make up an answer.\n"
         "3. **Be Specific:** For specific entities (e.g., 'Ocean Ravenclaw'), check if the EXACT name exists. If not, state that it is not mentioned.\n"
-        "4. **Language:** Answer in Korean."
+        f"4. **Language:** Answer in {answer_language}."
     )
     
     # EXAONE 전용 포맷팅

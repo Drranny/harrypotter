@@ -1,0 +1,31 @@
+query_id,short_answer,key_entities,evidence_keywords
+1,Severus Snape,Snape;Dumbledore;Astronomy Tower,Snape kills Dumbledore
+2,Sirius Black,Sirius Black;godfather,Harry godfather
+3,Ravenclaw,Luna Lovegood;Ravenclaw,Luna house
+4,Severus Snape,Snape;Potions,Potions teacher
+5,Molly Weasley,Molly Weasley;Bellatrix Lestrange,Molly kills Bellatrix
+6,Severus Snape,Snape;Half-Blood Prince,Half-Blood Prince identity
+7,Albus Dumbledore,Dumbledore;Invisibility Cloak;James Potter,cloak giver
+8,Hedwig,Hedwig;owl,Harry owl name
+9,Severus Snape,Snape;headmaster,headmaster after Dumbledore
+10,Harry Potter,Harry Potter;Tom Riddle diary;basilisk fang,diary destroyed
+11,Snape protected Harry for Lily,Snape;Lily Potter;Dumbledore,Snape motivation
+12,Harry is master of Elder Wand,Harry;Elder Wand;Draco Malfoy;Dumbledore,wand loyalty
+13,Immortality by Horcruxes,Voldemort;Horcruxes;soul;immortality,Horcrux purpose
+14,Lily's sacrificial protection,Lily Potter;sacrifice;protection;Voldemort,why Harry survived
+15,Dumbledore's superior power,Voldemort;Dumbledore;power,why Voldemort fears
+16,Prophecy about defeat,prophecy;Voldemort;defeat,why prophecy matters
+17,Escape to protect Harry and catch Pettigrew,Sirius Black;Azkaban;Peter Pettigrew;Harry,why Sirius escaped
+18,Protect Harry's childhood,Dumbledore;prophecy;Harry childhood,why prophecy delayed
+19,Harry matches prophecy,Voldemort;Harry;prophecy,why chosen enemy
+20,Need basilisk venom or Fiendfyre,Horcruxes;basilisk venom;Fiendfyre,destroying Horcruxes
+21,Elder Wand rebounded curse,Harry;Elder Wand;Voldemort;rebound,final defeat
+22,Horcrux fragment destroyed in forest,Harry;Voldemort;soul fragment;forest,forest survival
+23,Pettigrew framed Sirius,Pettigrew;Sirius Black;Potters,betrayal framing
+24,Destroy Horcruxes then final confrontation,Dumbledore;Horcruxes;Harry;Voldemort,Dumbledore plan
+25,Snape secretly protected and guided Harry,Snape;Harry;Dumbledore;protection,Snape help
+26,Dark ritual with blood bone flesh,Voldemort;Harry blood;father bone;Wormtail flesh,body restoration
+27,Riddle past memories reveal Horcruxes,Dumbledore;Tom Riddle;memories;Horcruxes,Horcrux discovery
+28,Cloak stone wand acquisition,Invisibility Cloak;Resurrection Stone;Elder Wand;Harry;Draco,Deathly Hallows acquisition
+29,Pensieve memories reveal loyalty,Snape;Pensieve;memories;loyalty,Snape loyalty reveal
+30,Scabbers exposed as Pettigrew,Peter Pettigrew;Scabbers;Ron,how Pettigrew revealed

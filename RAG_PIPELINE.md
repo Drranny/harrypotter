@@ -121,3 +121,11 @@ python3 scripts/eval_detailed_report.py \
   - `pip install langchain-community` 또는 `python3 -m pip install --user langchain-community`
 - 코드 데이터셋 미존재 경고:
   - `structure_code` 모드에서 정상 동작(빈 출력 생성)
+
+## 12. 최신 텍스트 실험 run
+- latest run tag: `text_benchmark_20260315_en`
+- run root: `results/runs/text_benchmark_20260315_en/`
+- integrated metrics: `results/runs/text_benchmark_20260315_en/text_metrics.csv`
+- correctness summary: `results/runs/text_benchmark_20260315_en/text_answer_correctness_summary.csv`
+- presentation table: `results/runs/text_benchmark_20260315_en/tables/text_metrics_summary.md`
+- full metrics table: `results/runs/text_benchmark_20260315_en/tables/text_metrics_full_summary.md`

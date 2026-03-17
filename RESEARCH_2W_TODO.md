@@ -3,7 +3,7 @@
 기준 문서: `route.pdf`  
 기간: 2주 (14일)  
 목표: 설계 수준에서 멈춘 연구를 실행 가능한 실험/결과 수준으로 완료
-상태 갱신: 2026-03-12 (실제 산출물 기준으로 재정리)
+상태 갱신: 2026-03-16 (text_benchmark_20260315_en run 반영)
 
 ## 성공 기준 (2주 종료 시점)
 - 텍스트/코드 도메인 모두에서 baseline 대비 구조 인식 청킹 실험 완료
@@ -75,14 +75,15 @@
 ### T2. 텍스트 구조 인식 청킹
 - [x] 문단/챕터 경계 기반 청킹 구현
 - [x] source/book/chapter metadata 보존
-- [ ] 작은 chunk size 조건에서도 문맥 유지 정책 추가
+- [x] 작은 chunk size 조건에서도 문맥 유지 정책 추가
 - [x] 산출물: `data/processed/chunks_structure_text.json`, `data/processed/chunks_structure_text_metadata.json`
 
 ### T3. 텍스트 본실험
 - [x] chunk size 조건 2~3개로 baseline/proposed 일괄 실행
 - [x] 검색 지표 산출 (`HitRate@K`, `MRR`)
-- [ ] 구조 지표 산출 (`Boundary Truncation Ratio`)
-- [ ] 생성 지표 산출 (`Answer Relevance`, `Faithfulness`)
+- [x] 구조 지표 산출 (`Boundary Truncation Ratio`)
+- [x] 생성 지표 산출 (`Answer Relevance`, `Faithfulness`)
+- [x] 정답 기반 correctness 지표 산출 (`Exact Match`, `Entity Recall`, `Semantic Similarity`)
 - [x] 실패 질의 사례 수집
 - [x] 텍스트 실험 자동화 스크립트 구축 (`E1`, `E2`)
   - 산출물: `scripts/run_text_experiments.py`
@@ -90,14 +91,28 @@
   - 산출물: `results/text_q30_experiment_report.md`, `results/text_experiment_summary_q30.csv`, `results/text_q30_metrics_summary.csv`
 - [x] 실험 실행/비교 가이드 문서화
   - 산출물: `TEXT_EXPERIMENTS.md`
-- [ ] 산출물: `results/text_metrics.csv`, 실패 사례 노트
-  - 진행중: `results/text_fixed_metrics.json`, `results/text_structure_text_metrics.json`, `results/text_experiment_summary.csv`, `results/text_experiment_summary_q30.csv`, `results/text_q30_experiment_report.md`, `results/detailed_eval_fixed.md`
+- [x] 산출물: `results/text_metrics.csv`, 실패 사례 노트
+  - 산출물: `results/runs/<run_tag>/text_metrics.csv`, `results/runs/<run_tag>/text_failure_notes.md`, `results/runs/<run_tag>/text_structure_metrics.json`, `results/runs/<run_tag>/generation/text_generation_*.json` (9설정: `fixed_{64,128,256,512}`, `structure_text_{64,128,256,512}`, `token_256`)
+  - 정답 채점 산출물: `results/runs/<run_tag>/text_answer_correctness_summary.csv`, `results/runs/<run_tag>/text_answer_correctness_detailed.csv`
+  - 실행 스크립트: `scripts/run_text_full_pipeline.py`
+  - 최신 완료 run: `results/runs/text_benchmark_20260315_en/`
+  - 최신 완료 산출물:
+    - `results/runs/text_benchmark_20260315_en/text_metrics.csv`
+    - `results/runs/text_benchmark_20260315_en/text_answer_correctness_summary.csv`
+    - `results/runs/text_benchmark_20260315_en/text_answer_correctness_detailed.csv`
+    - `results/runs/text_benchmark_20260315_en/tables/text_metrics_summary.md`
+    - `results/runs/text_benchmark_20260315_en/tables/text_metrics_full_summary.md`
 
 ### T4. 텍스트 분석/정리
-- [ ] baseline/proposed 차이 분석
-- [ ] chunk size 민감도 분석
-- [ ] 텍스트 실패 케이스 분류 (질의 유형/길이/경계 의존성)
-- [ ] 산출물: `results/tables/text_*`, `results/figures/text_*`, `docs/analysis_notes.md`
+- [x] baseline/proposed 차이 분석
+- [x] chunk size 민감도 분석
+- [x] 텍스트 실패 케이스 분류 (질의 유형/길이/경계 의존성)
+- [x] 산출물: `results/runs/<run_tag>/tables/text_*`, `results/runs/<run_tag>/figures/text_*`, `results/runs/<run_tag>/analysis_notes.md`
+  - 최신 완료 산출물:
+    - `results/runs/text_benchmark_20260315_en/tables/text_baseline_vs_proposed.csv`
+    - `results/runs/text_benchmark_20260315_en/tables/text_chunk_sensitivity.csv`
+    - `results/runs/text_benchmark_20260315_en/tables/text_failure_cases_by_type.csv`
+    - `results/runs/text_benchmark_20260315_en/analysis_notes.md`
 
 
 
@@ -173,6 +188,12 @@
 - [x] 30문항 기준 결과 요약 리포트 작성 및 CSV 요약 저장
 - [x] 라이브 재평가 결과 저장
   - 산출물: `results/text_fixed_metrics_live.json`, `results/text_fixed_metrics_live_q30.json`
+- [x] 영어 EXAONE 생성 기반 9설정 benchmark run 완료
+  - 산출물: `results/runs/text_benchmark_20260315_en/generation/text_generation_*.json`
+- [x] 정답 기반 correctness 평가 완료
+  - 산출물: `results/runs/text_benchmark_20260315_en/text_answer_correctness_summary.csv`, `results/runs/text_benchmark_20260315_en/text_answer_correctness_detailed.csv`
+- [x] 발표용 요약표/전체표 생성 완료
+  - 산출물: `results/runs/text_benchmark_20260315_en/tables/text_metrics_summary.md`, `results/runs/text_benchmark_20260315_en/tables/text_metrics_full_summary.md`
 
 ### C. 정답 라벨링 보조 작업
 - [x] paragraph ID 기반 코퍼스 생성 스크립트 작성
@@ -183,6 +204,8 @@
 - [x] 텍스트 데이터 audit 스크립트 작성
 - [x] interactive 질의용 CLI 스크립트 작성
   - 산출물: `question.py`
+- [x] interactive 답변 언어 선택(English/Korean) 추가
+  - 산출물: `question.py`, `rag_pipeline/prompt.py`, `rag_pipeline/rag_chain.py`
 - [x] TODO/실험 문서/파이프라인 문서 최신화
   - 관련 파일: `RESEARCH_2W_TODO.md`, `RAG_PIPELINE.md`, `README.md`, `TEXT_EXPERIMENTS.md`
 
@@ -193,10 +216,11 @@
 ## 운영 규칙 (권장)
 - 하루 시작: 당일 목표 3개만 고정
 - 하루 종료: 지표/로그/실패 사례를 반드시 파일로 남김
-- 실험 실행 시: 모든 run에 `timestamp`, `chunking_mode`, `chunk_size`, `overlap` 기록
+- 실험 실행 시: 모든 run에 `run_tag` 또는 `timestamp`, `chunking_mode`, `chunk_size`, `overlap` 기록
+- 텍스트 전체 실험은 `results/runs/<run_tag>/` 아래에 보존
 
 ## 즉시 실행 우선순위 (현재 기준)
-1. [진행중] 텍스트 트랙: 구조/생성 지표 추가 + 요약 결과를 `text_metrics.csv` 형태로 정리
+1. [완료] 텍스트 트랙: 구조/생성 지표 추가 + 요약 결과를 `text_metrics.csv` 형태로 정리
 2. [미착수] 코드 트랙: placeholder 질의셋/데이터셋을 실제 실험셋으로 교체
 3. [미착수] 공통 확장: 구조 지표/생성 지표 계산 규칙 문서화
 

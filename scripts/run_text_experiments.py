@@ -38,8 +38,9 @@ def _ensure_dirs() -> None:
     os.makedirs(os.path.join(BASE_DIR, "results"), exist_ok=True)
 
 
-def run_e1() -> None:
+def run_e1(results_dir: str, queries_path: str) -> None:
     _ensure_dirs()
+    os.makedirs(os.path.join(BASE_DIR, results_dir), exist_ok=True)
     modes = ["fixed", "token", "structure_text"]
     chunk_size = 256
     overlap = 50
@@ -48,7 +49,7 @@ def run_e1() -> None:
         chunks_path = f"{TEXT_PROCESSED_DIR}/chunks_{mode}_{chunk_size}.json"
         metadata_path = f"{TEXT_PROCESSED_DIR}/chunks_{mode}_{chunk_size}_metadata.json"
         index_path = f"vector_db/faiss_text_{mode}_{chunk_size}.index"
-        out_path = f"results/text_e1_{mode}_{chunk_size}.json"
+        out_path = os.path.join(results_dir, f"text_e1_{mode}_{chunk_size}.json")
 
         _run(
             [
@@ -83,7 +84,7 @@ def run_e1() -> None:
                 sys.executable,
                 EVAL_SCRIPT,
                 "--queries",
-                TEXT_EVAL_QUERIES,
+                queries_path,
                 "--chunks",
                 metadata_path,
                 "--index",
@@ -96,8 +97,9 @@ def run_e1() -> None:
         )
 
 
-def run_e2() -> None:
+def run_e2(results_dir: str, queries_path: str) -> None:
     _ensure_dirs()
+    os.makedirs(os.path.join(BASE_DIR, results_dir), exist_ok=True)
     modes = ["fixed", "structure_text"]
     chunk_sizes = [64, 128, 256, 512]
     overlap = 50
@@ -107,7 +109,7 @@ def run_e2() -> None:
             chunks_path = f"{TEXT_PROCESSED_DIR}/chunks_{mode}_{chunk_size}.json"
             metadata_path = f"{TEXT_PROCESSED_DIR}/chunks_{mode}_{chunk_size}_metadata.json"
             index_path = f"vector_db/faiss_text_{mode}_{chunk_size}.index"
-            out_path = f"results/text_e2_{mode}_{chunk_size}.json"
+            out_path = os.path.join(results_dir, f"text_e2_{mode}_{chunk_size}.json")
 
             _run(
                 [
@@ -142,7 +144,7 @@ def run_e2() -> None:
                     sys.executable,
                     EVAL_SCRIPT,
                     "--queries",
-                    TEXT_EVAL_QUERIES,
+                queries_path,
                     "--chunks",
                     metadata_path,
                     "--index",
@@ -158,12 +160,14 @@ def run_e2() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run text-only HP experiments")
     parser.add_argument("--run", choices=["e1", "e2", "all"], default="all")
+    parser.add_argument("--results-dir", default="results")
+    parser.add_argument("--queries", default=TEXT_EVAL_QUERIES)
     args = parser.parse_args()
 
     if args.run in {"e1", "all"}:
-        run_e1()
+        run_e1(args.results_dir, args.queries)
     if args.run in {"e2", "all"}:
-        run_e2()
+        run_e2(args.results_dir, args.queries)
 
     print("[DONE] text experiments complete")
     return 0

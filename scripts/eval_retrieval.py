@@ -17,6 +17,7 @@ import math
 import os
 import sys
 from typing import Dict, List, Tuple
+import re
 
 import faiss
 from rank_bm25 import BM25Okapi
@@ -73,11 +74,42 @@ def _chunk_key(chunk: Dict) -> str:
     return f"{source_file}::chunk_{chunk_id}"
 
 
-def _is_relevant(chunk: Dict, gold_sources: List[str], gold_chunk_ids: List[str]) -> bool:
+def _is_relevant(chunk: Dict, gold_sources: List[str], 
+                 gold_symbols: List[str], gold_chunk_ids: List[str]) -> bool:
+
+    # 1순위: chunk_id 직접 매칭
     if gold_chunk_ids and _chunk_key(chunk) in gold_chunk_ids:
         return True
-    if gold_sources and chunk.get("source_file", "Unknown") in gold_sources:
-        return True
+
+    # 2순위: symbol 매칭
+    if gold_symbols:
+            chunk_text = chunk.get("text", "")
+            chunk_parent = chunk.get("metadata", {}).get("parent", "")
+            
+            for symbol in gold_symbols:
+                if "." in symbol:
+                    class_name, method_name = symbol.split(".", 1)
+                    # parent 문자열 안에 "function:함수명"이 정확히 있는지 검사!
+                    if class_name in chunk_parent and f"function:{method_name}" in chunk_parent:
+                        return True
+                else:
+                    # 단어 경계 체크로 부분 매칭 방지 (클래스명 등)
+                    import re
+                    pattern = r'\b' + re.escape(symbol) + r'\b'
+                    if re.search(pattern, chunk_parent) or re.search(pattern, chunk_text):
+                        return True
+                        
+            # symbol 기준이 있는데 못 찾았으면 무조건 오답
+            return False
+
+    # 3순위: gold_symbols가 없을 때만 파일명 매칭
+    else:
+        chunk_source = os.path.basename(chunk.get("source_file", ""))
+        if gold_sources:
+            for gold_src in gold_sources:
+                if os.path.basename(gold_src) == chunk_source:
+                    return True
+
     return False
 
 
@@ -120,8 +152,11 @@ def evaluate(
     for q in queries:
         gold_sources = _normalize_to_list(q.get("gold_sources"))
         gold_chunk_ids = _normalize_to_list(q.get("gold_chunk_ids") or q.get("gold_paragraph_ids"))
+        
+        # 쿼리에서 gold_symbols 꺼내오기
+        gold_symbols = _normalize_to_list(q.get("gold_symbols"))
 
-        if not gold_sources and not gold_chunk_ids:
+        if not gold_sources and not gold_chunk_ids and not gold_symbols:
             skipped += 1
             continue
 
@@ -135,7 +170,7 @@ def evaluate(
         rank = None
         relevances: List[int] = []
         for i, chunk in enumerate(retrieved_chunks, start=1):
-            relevant = _is_relevant(chunk, gold_sources=gold_sources, gold_chunk_ids=gold_chunk_ids)
+            relevant = _is_relevant(chunk, gold_sources=gold_sources, gold_symbols=gold_symbols, gold_chunk_ids=gold_chunk_ids)
             relevances.append(1 if relevant else 0)
             if rank is None and relevant:
                 rank = i
@@ -158,6 +193,7 @@ def evaluate(
                 "query_type": q.get("query_type") or q.get("type"),
                 "difficulty": q.get("difficulty"),
                 "gold_sources": gold_sources,
+                "gold_symbols": gold_symbols,
                 "gold_chunk_ids": gold_chunk_ids,
                 "retrieved_sources": retrieved_sources,
                 "retrieved_chunk_ids": retrieved_chunk_keys,

@@ -360,21 +360,95 @@ def _iter_ast_chunks(tree: ast.AST, source: str) -> List[Dict]:
                             },
                         }
                     )
-                    self.generic_visit(node)
                     self._stack.pop()
                     return
             self.generic_visit(node)
 
-        visit_ClassDef = _visit_target
+        def _visit_class(self, node: ast.ClassDef) -> None:
+            self._stack.append(self._node_label(node))
+            
+            # 클래스 내부의 '클래스 변수/docstring' 들을 묶어서 클래스 헤더 청크로 만듦
+            _NAMED_DEFS = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)
+            current_group = []
+            
+            for child in node.body:
+                if isinstance(child, _NAMED_DEFS):
+                    # 함수를 만나면, 그 전에 모아둔 클래스 변수들을 하나의 청크로 발행
+                    if current_group:
+                        start = current_group[0].lineno
+                        end = current_group[-1].end_lineno
+                        snippet = "\n".join(lines[start - 1 : end]).strip()
+                        if snippet:
+                            chunks.append({
+                                "text": snippet,
+                                "metadata": {
+                                    "node_type": "ClassHeader",
+                                    "start_line": start,
+                                    "end_line": end,
+                                    "parent": " > ".join(self._stack)
+                                }
+                            })
+                        current_group = []
+                else:
+                    if hasattr(child, "lineno") and hasattr(child, "end_lineno"):
+                        current_group.append(child)
+            
+            # 클래스 끝에 남은 변수들이 있다면 마저 발행
+            if current_group:
+                start = current_group[0].lineno
+                end = current_group[-1].end_lineno
+                snippet = "\n".join(lines[start - 1 : end]).strip()
+                if snippet:
+                    chunks.append({
+                        "text": snippet,
+                        "metadata": {
+                            "node_type": "ClassHeader",
+                            "start_line": start,
+                            "end_line": end,
+                            "parent": " > ".join(self._stack)
+                        }
+                    })
+
+            # 함수 등 나머지 자식 노드들 순회
+            self.generic_visit(node)
+            self._stack.pop()
+
+        visit_ClassDef = _visit_class
         visit_FunctionDef = _visit_target
         visit_AsyncFunctionDef = _visit_target
-        visit_If = _visit_target
-        visit_For = _visit_target
-        visit_While = _visit_target
-        visit_Try = _visit_target
-        visit_With = _visit_target
 
     _Visitor().visit(tree)
+
+    # Post-process: merge short chunks (<= 50 tokens) safely
+    MIN_TOKENS = 50
+    merged: List[Dict] = []
+    i = 0
+    while i < len(chunks):
+        current = chunks[i]
+        token_count = len(current["text"].split())
+        
+        if token_count <= MIN_TOKENS and i + 1 < len(chunks):
+            next_chunk = chunks[i + 1]
+            current_parent = current.get("metadata", {}).get("parent", "")
+            next_parent = next_chunk.get("metadata", {}).get("parent", "")
+            current_type = current.get("metadata", {}).get("node_type", "")
+            
+            # 조건 1: 부모가 완전히 똑같을 때 (같은 고아 그룹, 같은 클래스 헤더 쪼가리 등)
+            is_same_parent = (current_parent == next_parent)
+            
+            # 조건 2: 다음 청크가 내 자식일 때 (내 parent 경로로 시작하는지 검사)
+            # 예) current: "class:HTTPAdapter", next: "class:HTTPAdapter > function:send"
+            is_parent_child = bool(current_parent) and next_parent.startswith(current_parent + " >")
+            
+            if is_same_parent or (current_type == "ClassHeader" and is_parent_child):
+                # 안전하게 병합!
+                next_chunk["text"] = current["text"] + "\n\n" + next_chunk["text"]
+                i += 1
+                continue
+                
+        merged.append(current)
+        i += 1
+    chunks = merged
 
     # Detect orphan code: top-level statements outside class/function definitions.
     # Group consecutive orphan nodes (split whenever a named def appears between them).
@@ -530,18 +604,42 @@ def chunk_code_file(path: str, mode: str, chunk_size: int, overlap: int) -> List
     if mode == "structure_code":
         structured = split_structure_code(text)
         for i, obj in enumerate(structured):
-            rows.append(
-                {
-                    "chunk_id": i,
-                    "text": obj["text"],
-                    "source_file": fname,
-                    "source": "code",
-                    "chunk_mode": mode,
-                    "chunk_size": chunk_size,
-                    "chunk_overlap": overlap,
-                    "metadata": obj.get("metadata", {}),
-                }
-            )
+            piece_text = obj["text"]
+            piece_meta = obj.get("metadata", {})
+
+            # 🌟 [하이브리드 폴백 추가] 청크가 너무 크면 fixed_size로 강제 분할하되 족보(parent)는 유지!
+            if len(piece_text) > chunk_size:
+                sub_pieces = split_fixed(piece_text, chunk_size, overlap)
+                for sub_i, sub_text in enumerate(sub_pieces):
+                    # 기존 족보 메타데이터 복사 후 폴백 정보 추가
+                    fallback_meta = piece_meta.copy()
+                    fallback_meta["fallback_chunked"] = True
+                    
+                    rows.append(
+                        {
+                            "chunk_id": f"{i}_{sub_i}",
+                            "text": sub_text,
+                            "source_file": fname,
+                            "source": "code",
+                            "chunk_mode": mode,
+                            "chunk_size": chunk_size,
+                            "chunk_overlap": overlap,
+                            "metadata": fallback_meta,
+                        }
+                    )
+            else:
+                rows.append(
+                    {
+                        "chunk_id": str(i),
+                        "text": piece_text,
+                        "source_file": fname,
+                        "source": "code",
+                        "chunk_mode": mode,
+                        "chunk_size": chunk_size,
+                        "chunk_overlap": overlap,
+                        "metadata": piece_meta,
+                    }
+                )
         return rows
 
     return rows
@@ -565,7 +663,7 @@ def main() -> None:
             print(f"[TEXT] {os.path.basename(path)}: {len(rows)} chunks")
 
     # Code mode operates on code dataset, but does not fail if dataset is missing.
-    if args.mode == "structure_code":
+    if args.mode in {"fixed", "line", "token", "structure_code"}:
         if not code_files:
             print(f"[WARN] No code files found in {args.code_input_dir}. Writing empty output.")
         for path in code_files:

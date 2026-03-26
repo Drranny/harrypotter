@@ -60,7 +60,7 @@ def generate_with_meta(prompt, answer_language="English"):
         {
             "role": "system",
             "content": (
-                "You are a Harry Potter expert. "
+                "You are an expert Python Backend Developer and AI assistant. "
                 f"Answer concisely in {answer_language} using only the provided context."
             ),
         },

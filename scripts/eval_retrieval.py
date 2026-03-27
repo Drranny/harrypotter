@@ -94,7 +94,6 @@ def _is_relevant(chunk: Dict, gold_sources: List[str],
                         return True
                 else:
                     # 단어 경계 체크로 부분 매칭 방지 (클래스명 등)
-                    import re
                     pattern = r'\b' + re.escape(symbol) + r'\b'
                     if re.search(pattern, chunk_parent) or re.search(pattern, chunk_text):
                         return True

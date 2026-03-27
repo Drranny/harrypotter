@@ -120,14 +120,15 @@ def evaluate_file(path: str, mode: str) -> Dict[str, float]:
 
         if not check_syntax(text):
             syntax_error_count += 1
-
+                
         if mode == "structure":
-            is_orphan = bool(metadata.get("is_orphan", False))
-        else:
             if "is_orphan" in metadata:
                 is_orphan = bool(metadata.get("is_orphan"))
             else:
                 is_orphan = is_orphan_heuristic(text)
+        else:
+            # fixed 모드는 항상 휴리스틱
+            is_orphan = is_orphan_heuristic(text)
 
         if is_orphan:
             orphan_count += 1
@@ -172,6 +173,7 @@ def format_table(rows: List[Dict[str, str]]) -> str:
 def main() -> int:
     files_to_check = build_files_to_check()
     rows: List[Dict[str, str]] = []
+    output: Dict = {}  # JSON 저장용
 
     for item in files_to_check:
         resolved_path = resolve_existing_path(item["path"], item["fallback"])
@@ -180,18 +182,23 @@ def main() -> int:
             continue
 
         result = evaluate_file(resolved_path, item["mode"])
-        rows.append(
-            {
-                "method": item["method"],
-                "total": str(result["total"]),
-                "syntax": f"{result['syntax_error_pct']:.2f}%",
-                "orphan": f"{result['orphan_pct']:.2f}%",
-            }
-        )
+        
+        rows.append({
+            "method": item["method"],
+            "total": str(result["total"]),
+            "syntax": f"{result['syntax_error_pct']:.2f}%",
+            "orphan": f"{result['orphan_pct']:.2f}%",
+        })
+        
+        output[item["method"]] = result  # 같은 result 재사용
 
     if not rows:
         print("[ERROR] No valid files to evaluate.")
         return 1
+
+    os.makedirs("results", exist_ok=True)
+    with open("results/integrity_results.json", "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
 
     print(format_table(rows))
     return 0

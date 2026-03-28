@@ -60,8 +60,9 @@ def generate_with_meta(prompt, answer_language="English"):
         {
             "role": "system",
             "content": (
-                "You are an expert Python Backend Developer and AI assistant. "
-                f"Answer concisely in {answer_language} using only the provided context."
+                "You are a Harry Potter expert. "
+                f"Answer in {answer_language} using only the retrieved context. "
+                "For fact questions, prefer the exact entity phrase from the context."
             ),
         },
         {"role": "user", "content": prompt}
@@ -79,10 +80,8 @@ def generate_with_meta(prompt, answer_language="English"):
     start_time = time.perf_counter()
     outputs = pipe(
         input_text,
-        max_new_tokens=300,
-        do_sample=True,
-        temperature=0.3,
-        top_p=0.9
+        max_new_tokens=96,
+        do_sample=False,
     )
     end_time = time.perf_counter()
     duration = end_time - start_time

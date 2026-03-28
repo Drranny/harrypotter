@@ -193,7 +193,12 @@ def main() -> int:
         generation_meta: Dict = {}
         if args.answer_mode == "llm" and answer_fns is not None:
             generate_with_meta, _ = answer_fns
-            prompt = build_prompt(contexts, query, answer_language=args.answer_language)
+            prompt = build_prompt(
+                contexts,
+                query,
+                answer_language=args.answer_language,
+                query_type=row.get("query_type") or row.get("type") or "",
+            )
             generation_meta = generate_with_meta(prompt, answer_language=args.answer_language)
             answer = generation_meta.get("response", "")
         else:

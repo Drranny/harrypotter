@@ -3,7 +3,7 @@ CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 
 # Embedding
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "jinaai/jina-embeddings-v2-base-code"
 
 # Vector DB
 FAISS_INDEX_PATH = "./vector_db/faiss.index"

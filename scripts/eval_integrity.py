@@ -52,37 +52,26 @@ def check_syntax(code_text: str) -> bool:
 
 
 def build_files_to_check() -> List[Dict[str, str]]:
-    """Build canonical file mapping and keep 1500 structure v2 compatibility."""
-    checks: List[Dict[str, str]] = [
-        {
-            "method": "structure_1500",
-            "mode": "structure",
-            "path": "data/processed/code_structure_v2_metadata.json",
-            "fallback": "data/processed/code_structure_1500_metadata.json",
-        },
-        {
-            "method": "fixed_1500",
-            "mode": "fixed",
-            "path": "data/processed/code_fixed_1500_metadata.json",
-            "fallback": "",
-        },
-    ]
+    """Build canonical file mapping for Jina metadata files."""
+    checks: List[Dict[str, str]] = []
 
-    for size in (500, 256, 128):
+    for size in (1500, 500, 256, 128):
         checks.append(
             {
-                "method": f"structure_{size}",
+                "method": f"structure_{size}_jina",
                 "mode": "structure",
-                "path": f"data/processed/code_structure_{size}_metadata.json",
-                "fallback": "",
+                # 새로 만든 jina 파일을 바라보도록 경로 수정!
+                "path": f"data/processed/code_structure_{size}_jina_metadata.json",
+                "fallback": f"data/processed/code_structure_{size}_metadata.json",
             }
         )
         checks.append(
             {
-                "method": f"fixed_{size}",
+                "method": f"fixed_{size}_jina",
                 "mode": "fixed",
-                "path": f"data/processed/code_fixed_{size}_metadata.json",
-                "fallback": "",
+                # 새로 만든 jina 파일을 바라보도록 경로 수정!
+                "path": f"data/processed/code_fixed_{size}_jina_metadata.json",
+                "fallback": f"data/processed/code_fixed_{size}_metadata.json",
             }
         )
 

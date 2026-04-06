@@ -66,29 +66,24 @@ def load_jsonl(path: str) -> List[Dict]:
 
 
 def build_code_prompt(contexts: List[str], query: str, answer_language: str = "English") -> str:
-	"""Build an isolated, code-focused prompt without external prompt modules."""
-	formatted_contexts = []
-	for i, context in enumerate(contexts, start=1):
-		formatted_contexts.append(f"[{i}] {context}")
+    formatted_contexts = []
+    for i, context in enumerate(contexts, start=1):
+        formatted_contexts.append(f"[{i}] {context}")
+    context_block = "\n\n".join(formatted_contexts) if formatted_contexts else "[No context retrieved]"
 
-	context_block = "\n\n".join(formatted_contexts) if formatted_contexts else "[No context retrieved]"
-
-	return (
-		"System: You are a Senior Python Backend Engineer. "
-		"Answer concisely in English using only the provided context.\n"
-		"Instruction: You are a truthful and accurate AI assistant specialized in Python Backend Engineering "
-		"and the 'requests' library. Your task is to answer the user's question ONLY based on the provided "
-		"Information below. Do NOT use outside knowledge. If the answer is not in the text, say "
-		"'The provided documents do not contain the answer.'\n"
-		f"Output Language: {answer_language}\n\n"
-		"Information:\n"
-		f"{context_block}\n\n"
-		"Outside Knowledge Policy:\n"
-		"- Strictly forbidden: any facts not present in Information above.\n"
-		"- If evidence is insufficient, respond exactly: The provided documents do not contain the answer.\n\n"
-		"Question:\n"
-		f"{query}\n"
-	)
+    return (
+        "System: You are a Senior Python Backend Engineer specializing in the requests library.\n"
+        "Your task is to answer the question based on the provided code context.\n"
+        "The context may contain partial code snippets. Use them as clues to infer the answer.\n"
+        "If the context provides any relevant information, use it to construct a helpful answer.\n"
+        "Only if the context has absolutely no relevance to the question, say "
+        "'The provided documents do not contain the answer.'\n"
+        f"Output Language: {answer_language}\n\n"
+        "Code Context:\n"
+        f"{context_block}\n\n"
+        "Question:\n"
+        f"{query}\n"
+    )
 
 
 def _cosine(a: List[float], b: List[float]) -> float:

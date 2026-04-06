@@ -1,0 +1,2978 @@
+nohup: ignoring input
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.76s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.70s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.71s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 326
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 31.10s
+[DEBUG] Throughput: 3.76 tokens/s
+[DEBUG] Response Token Count: 117
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.8847, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 331
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 19.38s
+[DEBUG] Throughput: 2.58 tokens/s
+[DEBUG] Response Token Count: 50
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.9172, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 341
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 22.65s
+[DEBUG] Throughput: 2.87 tokens/s
+[DEBUG] Response Token Count: 65
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.8896, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 313
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 18.65s
+[DEBUG] Throughput: 2.52 tokens/s
+[DEBUG] Response Token Count: 47
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.7866, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 266
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 28.22s
+[DEBUG] Throughput: 3.97 tokens/s
+[DEBUG] Response Token Count: 112
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.8494, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 342
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 39.97s
+[DEBUG] Throughput: 4.03 tokens/s
+[DEBUG] Response Token Count: 161
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.8925, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 332
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 18.91s
+[DEBUG] Throughput: 2.38 tokens/s
+[DEBUG] Response Token Count: 45
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.9092, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 326
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 18.80s
+[DEBUG] Throughput: 2.39 tokens/s
+[DEBUG] Response Token Count: 45
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.8928, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 326
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 34.21s
+[DEBUG] Throughput: 3.89 tokens/s
+[DEBUG] Response Token Count: 133
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.8586, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 308
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 35.80s
+[DEBUG] Throughput: 4.08 tokens/s
+[DEBUG] Response Token Count: 146
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.6799, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 340
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 21.85s
+[DEBUG] Throughput: 2.75 tokens/s
+[DEBUG] Response Token Count: 60
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9210, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 289
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 29.45s
+[DEBUG] Throughput: 3.87 tokens/s
+[DEBUG] Response Token Count: 114
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8744, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 330
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 23.81s
+[DEBUG] Throughput: 3.07 tokens/s
+[DEBUG] Response Token Count: 73
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.8360, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 323
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.75s
+[DEBUG] Throughput: 4.29 tokens/s
+[DEBUG] Response Token Count: 192
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.8846, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 333
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.47s
+[DEBUG] Throughput: 3.98 tokens/s
+[DEBUG] Response Token Count: 149
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.8654, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 334
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.31s
+[DEBUG] Throughput: 4.18 tokens/s
+[DEBUG] Response Token Count: 185
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.7556, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 340
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 30.61s
+[DEBUG] Throughput: 3.56 tokens/s
+[DEBUG] Response Token Count: 109
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.7388, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 320
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 12.27s
+[DEBUG] Throughput: 0.73 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.1135, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 344
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 29.94s
+[DEBUG] Throughput: 3.47 tokens/s
+[DEBUG] Response Token Count: 104
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8648, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 343
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 40.21s
+[DEBUG] Throughput: 4.03 tokens/s
+[DEBUG] Response Token Count: 162
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.8204, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 324
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 22.70s
+[DEBUG] Throughput: 3.00 tokens/s
+[DEBUG] Response Token Count: 68
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.8670, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 325
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.33s
+[DEBUG] Throughput: 3.34 tokens/s
+[DEBUG] Response Token Count: 88
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.8446, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 317
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.88s
+[DEBUG] Throughput: 3.48 tokens/s
+[DEBUG] Response Token Count: 97
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.9309, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 336
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 33.45s
+[DEBUG] Throughput: 3.77 tokens/s
+[DEBUG] Response Token Count: 126
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8922, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 288
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 11.17s
+[DEBUG] Throughput: 0.81 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 359
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 58.37s
+[DEBUG] Throughput: 4.39 tokens/s
+[DEBUG] Response Token Count: 256
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.8249, faithfulness=0.6364
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 269
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 10.51s
+[DEBUG] Throughput: 0.86 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.2058, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 323
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 48.47s
+[DEBUG] Throughput: 4.41 tokens/s
+[DEBUG] Response Token Count: 214
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.7866, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 346
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 42.61s
+[DEBUG] Throughput: 4.08 tokens/s
+[DEBUG] Response Token Count: 174
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.8458, faithfulness=0.6250
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 327
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 22.19s
+[DEBUG] Throughput: 2.84 tokens/s
+[DEBUG] Response Token Count: 63
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8777, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 352
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 21.77s
+[DEBUG] Throughput: 2.53 tokens/s
+[DEBUG] Response Token Count: 55
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.9020, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 326
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 45.93s
+[DEBUG] Throughput: 4.25 tokens/s
+[DEBUG] Response Token Count: 195
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.8410, faithfulness=0.8571
+[DONE] output=results/code_generation_fixed_128.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7860124412519967,
+  "faithfulness": 0.7197747564935065,
+  "elapsed_sec": 962.2955585159361
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.47s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.38s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.54s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2024
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 139.00s
+[DEBUG] Throughput: 1.54 tokens/s
+[DEBUG] Response Token Count: 214
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.8305, faithfulness=0.4286
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1959
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 128.19s
+[DEBUG] Throughput: 1.50 tokens/s
+[DEBUG] Response Token Count: 192
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.8211, faithfulness=0.5714
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1997
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 107.51s
+[DEBUG] Throughput: 0.94 tokens/s
+[DEBUG] Response Token Count: 101
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.8461, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1973
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 133.41s
+[DEBUG] Throughput: 1.57 tokens/s
+[DEBUG] Response Token Count: 209
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.7080, faithfulness=0.7778
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2045
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 109.02s
+[DEBUG] Throughput: 0.84 tokens/s
+[DEBUG] Response Token Count: 92
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.7634, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1786
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 96.37s
+[DEBUG] Throughput: 1.08 tokens/s
+[DEBUG] Response Token Count: 104
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.8474, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2004
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 123.43s
+[DEBUG] Throughput: 1.31 tokens/s
+[DEBUG] Response Token Count: 162
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.8618, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2103
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 114.06s
+[DEBUG] Throughput: 0.89 tokens/s
+[DEBUG] Response Token Count: 102
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.8308, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2130
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 134.31s
+[DEBUG] Throughput: 1.25 tokens/s
+[DEBUG] Response Token Count: 168
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.6933, faithfulness=0.3333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2044
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 147.60s
+[DEBUG] Throughput: 1.64 tokens/s
+[DEBUG] Response Token Count: 242
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.6942, faithfulness=0.7000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1979
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 97.06s
+[DEBUG] Throughput: 0.67 tokens/s
+[DEBUG] Response Token Count: 65
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9326, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1857
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 135.69s
+[DEBUG] Throughput: 1.81 tokens/s
+[DEBUG] Response Token Count: 245
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8314, faithfulness=0.6364
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1736
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 104.19s
+[DEBUG] Throughput: 1.42 tokens/s
+[DEBUG] Response Token Count: 148
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.7308, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1986
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 131.23s
+[DEBUG] Throughput: 1.49 tokens/s
+[DEBUG] Response Token Count: 195
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.9071, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2015
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 159.63s
+[DEBUG] Throughput: 1.88 tokens/s
+[DEBUG] Response Token Count: 300
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.7582, faithfulness=0.6154
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1861
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 100.48s
+[DEBUG] Throughput: 1.03 tokens/s
+[DEBUG] Response Token Count: 103
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.8461, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2019
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 142.12s
+[DEBUG] Throughput: 1.60 tokens/s
+[DEBUG] Response Token Count: 228
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.6523, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2087
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 120.14s
+[DEBUG] Throughput: 1.07 tokens/s
+[DEBUG] Response Token Count: 128
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.7559, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1690
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 99.89s
+[DEBUG] Throughput: 1.40 tokens/s
+[DEBUG] Response Token Count: 140
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.6639, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2130
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 163.35s
+[DEBUG] Throughput: 1.73 tokens/s
+[DEBUG] Response Token Count: 282
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.6781, faithfulness=0.7000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2039
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 106.71s
+[DEBUG] Throughput: 0.83 tokens/s
+[DEBUG] Response Token Count: 89
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.8961, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2171
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 126.41s
+[DEBUG] Throughput: 1.04 tokens/s
+[DEBUG] Response Token Count: 132
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.7348, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1949
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 141.41s
+[DEBUG] Throughput: 1.72 tokens/s
+[DEBUG] Response Token Count: 243
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.8282, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1963
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 143.38s
+[DEBUG] Throughput: 1.72 tokens/s
+[DEBUG] Response Token Count: 247
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8074, faithfulness=0.8571
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1993
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 84.06s
+[DEBUG] Throughput: 0.11 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2132
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 159.48s
+[DEBUG] Throughput: 1.64 tokens/s
+[DEBUG] Response Token Count: 262
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.7130, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2095
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 101.85s
+[DEBUG] Throughput: 0.56 tokens/s
+[DEBUG] Response Token Count: 57
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.5868, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2123
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 162.43s
+[DEBUG] Throughput: 1.73 tokens/s
+[DEBUG] Response Token Count: 281
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.6948, faithfulness=0.4444
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2169
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 170.70s
+[DEBUG] Throughput: 1.76 tokens/s
+[DEBUG] Response Token Count: 300
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.8238, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1999
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 107.40s
+[DEBUG] Throughput: 0.92 tokens/s
+[DEBUG] Response Token Count: 99
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.9090, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1847
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 87.68s
+[DEBUG] Throughput: 0.63 tokens/s
+[DEBUG] Response Token Count: 55
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.9048, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 2121
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 139.63s
+[DEBUG] Throughput: 1.40 tokens/s
+[DEBUG] Response Token Count: 196
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.7455, faithfulness=0.7143
+[DONE] output=results/code_generation_fixed_1500.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7623722001608669,
+  "faithfulness": 0.7045437201687201,
+  "elapsed_sec": 4028.7220305912197
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.46s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.20s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.54s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 432
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 41.43s
+[DEBUG] Throughput: 3.57 tokens/s
+[DEBUG] Response Token Count: 148
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.8043, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 469
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 32.73s
+[DEBUG] Throughput: 2.84 tokens/s
+[DEBUG] Response Token Count: 93
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.8929, faithfulness=0.3333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 494
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 30.17s
+[DEBUG] Throughput: 2.45 tokens/s
+[DEBUG] Response Token Count: 74
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.8827, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 459
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 29.97s
+[DEBUG] Throughput: 2.60 tokens/s
+[DEBUG] Response Token Count: 78
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.8093, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 435
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 28.12s
+[DEBUG] Throughput: 2.60 tokens/s
+[DEBUG] Response Token Count: 73
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.8323, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 457
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 61.05s
+[DEBUG] Throughput: 4.01 tokens/s
+[DEBUG] Response Token Count: 245
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.7694, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 504
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.63s
+[DEBUG] Throughput: 2.92 tokens/s
+[DEBUG] Response Token Count: 110
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.8521, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 513
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 49.75s
+[DEBUG] Throughput: 3.48 tokens/s
+[DEBUG] Response Token Count: 173
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.8349, faithfulness=0.8333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 473
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 53.68s
+[DEBUG] Throughput: 3.80 tokens/s
+[DEBUG] Response Token Count: 204
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.7667, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 449
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 29.07s
+[DEBUG] Throughput: 2.65 tokens/s
+[DEBUG] Response Token Count: 77
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.8317, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 475
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.42s
+[DEBUG] Throughput: 2.30 tokens/s
+[DEBUG] Response Token Count: 63
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9179, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 481
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.14s
+[DEBUG] Throughput: 3.12 tokens/s
+[DEBUG] Response Token Count: 119
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8427, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 432
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 40.51s
+[DEBUG] Throughput: 3.55 tokens/s
+[DEBUG] Response Token Count: 144
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.8504, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 502
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 56.78s
+[DEBUG] Throughput: 3.79 tokens/s
+[DEBUG] Response Token Count: 215
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.9023, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 405
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 46.58s
+[DEBUG] Throughput: 3.91 tokens/s
+[DEBUG] Response Token Count: 182
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.7531, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 498
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 46.43s
+[DEBUG] Throughput: 3.45 tokens/s
+[DEBUG] Response Token Count: 160
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.7775, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 467
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 46.68s
+[DEBUG] Throughput: 3.62 tokens/s
+[DEBUG] Response Token Count: 169
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.7503, faithfulness=0.5714
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 499
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 28.31s
+[DEBUG] Throughput: 2.23 tokens/s
+[DEBUG] Response Token Count: 63
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.8096, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 515
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 34.33s
+[DEBUG] Throughput: 2.68 tokens/s
+[DEBUG] Response Token Count: 92
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8887, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 451
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 51.38s
+[DEBUG] Throughput: 3.81 tokens/s
+[DEBUG] Response Token Count: 196
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.8004, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 368
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 23.70s
+[DEBUG] Throughput: 2.66 tokens/s
+[DEBUG] Response Token Count: 63
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.8781, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 488
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 40.05s
+[DEBUG] Throughput: 3.22 tokens/s
+[DEBUG] Response Token Count: 129
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.7640, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 490
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.46s
+[DEBUG] Throughput: 3.12 tokens/s
+[DEBUG] Response Token Count: 120
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.8843, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 423
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 31.36s
+[DEBUG] Throughput: 3.06 tokens/s
+[DEBUG] Response Token Count: 96
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8991, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 389
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 14.73s
+[DEBUG] Throughput: 0.61 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 510
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 31.06s
+[DEBUG] Throughput: 2.41 tokens/s
+[DEBUG] Response Token Count: 75
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.8100, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 464
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.24s
+[DEBUG] Throughput: 2.21 tokens/s
+[DEBUG] Response Token Count: 58
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.6447, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 458
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 35.75s
+[DEBUG] Throughput: 3.13 tokens/s
+[DEBUG] Response Token Count: 112
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.7930, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 489
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 58.63s
+[DEBUG] Throughput: 3.85 tokens/s
+[DEBUG] Response Token Count: 226
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.7849, faithfulness=0.7778
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 494
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 30.79s
+[DEBUG] Throughput: 2.50 tokens/s
+[DEBUG] Response Token Count: 77
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8619, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 490
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 18.21s
+[DEBUG] Throughput: 0.49 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.1288, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 474
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 54.11s
+[DEBUG] Throughput: 3.81 tokens/s
+[DEBUG] Response Token Count: 206
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.7455, faithfulness=0.6250
+[DONE] output=results/code_generation_fixed_256.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7769505063431743,
+  "faithfulness": 0.7455481150793651,
+  "elapsed_sec": 1226.129842724651
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.67s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.26s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 726
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 59.71s
+[DEBUG] Throughput: 2.95 tokens/s
+[DEBUG] Response Token Count: 176
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.8268, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 760
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 36.61s
+[DEBUG] Throughput: 1.39 tokens/s
+[DEBUG] Response Token Count: 51
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.8734, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 753
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 42.46s
+[DEBUG] Throughput: 1.93 tokens/s
+[DEBUG] Response Token Count: 82
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.7581, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 731
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 64.15s
+[DEBUG] Throughput: 3.12 tokens/s
+[DEBUG] Response Token Count: 200
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.6193, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 716
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.56s
+[DEBUG] Throughput: 0.34 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.1035, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 720
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.33s
+[DEBUG] Throughput: 2.28 tokens/s
+[DEBUG] Response Token Count: 101
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.8552, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 696
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.25s
+[DEBUG] Throughput: 1.96 tokens/s
+[DEBUG] Response Token Count: 75
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.9097, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 796
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 55.29s
+[DEBUG] Throughput: 2.53 tokens/s
+[DEBUG] Response Token Count: 140
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.8631, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 731
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 50.82s
+[DEBUG] Throughput: 2.60 tokens/s
+[DEBUG] Response Token Count: 132
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.8210, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 800
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 64.59s
+[DEBUG] Throughput: 2.88 tokens/s
+[DEBUG] Response Token Count: 186
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.8370, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 666
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.69s
+[DEBUG] Throughput: 0.79 tokens/s
+[DEBUG] Response Token Count: 21
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9313, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 759
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 52.92s
+[DEBUG] Throughput: 2.59 tokens/s
+[DEBUG] Response Token Count: 137
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8508, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 654
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 51.24s
+[DEBUG] Throughput: 2.99 tokens/s
+[DEBUG] Response Token Count: 153
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.6975, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 770
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 56.99s
+[DEBUG] Throughput: 2.68 tokens/s
+[DEBUG] Response Token Count: 153
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.8897, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 787
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 78.42s
+[DEBUG] Throughput: 3.28 tokens/s
+[DEBUG] Response Token Count: 257
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.7633, faithfulness=0.6429
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 733
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.87s
+[DEBUG] Throughput: 2.27 tokens/s
+[DEBUG] Response Token Count: 102
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.7895, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 736
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 48.29s
+[DEBUG] Throughput: 2.44 tokens/s
+[DEBUG] Response Token Count: 118
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.6683, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 701
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 35.54s
+[DEBUG] Throughput: 1.69 tokens/s
+[DEBUG] Response Token Count: 60
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.8385, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 705
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 70.21s
+[DEBUG] Throughput: 3.35 tokens/s
+[DEBUG] Response Token Count: 235
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8776, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 784
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 74.16s
+[DEBUG] Throughput: 3.18 tokens/s
+[DEBUG] Response Token Count: 236
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.7230, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 647
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 49.50s
+[DEBUG] Throughput: 2.89 tokens/s
+[DEBUG] Response Token Count: 143
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.8610, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 722
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 43.82s
+[DEBUG] Throughput: 2.21 tokens/s
+[DEBUG] Response Token Count: 97
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.8698, faithfulness=0.3333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 713
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 55.70s
+[DEBUG] Throughput: 2.85 tokens/s
+[DEBUG] Response Token Count: 159
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.8561, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 745
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 39.28s
+[DEBUG] Throughput: 1.78 tokens/s
+[DEBUG] Response Token Count: 70
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.9149, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 769
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 28.73s
+[DEBUG] Throughput: 0.31 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 780
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 40.96s
+[DEBUG] Throughput: 1.71 tokens/s
+[DEBUG] Response Token Count: 70
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.7909, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 715
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 41.36s
+[DEBUG] Throughput: 2.10 tokens/s
+[DEBUG] Response Token Count: 87
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.5646, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 804
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 63.20s
+[DEBUG] Throughput: 2.82 tokens/s
+[DEBUG] Response Token Count: 178
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.7674, faithfulness=0.3750
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 792
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 70.03s
+[DEBUG] Throughput: 3.07 tokens/s
+[DEBUG] Response Token Count: 215
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.7971, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 765
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.84s
+[DEBUG] Throughput: 1.53 tokens/s
+[DEBUG] Response Token Count: 58
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8955, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 681
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 25.13s
+[DEBUG] Throughput: 0.36 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.1288, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 741
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 43.61s
+[DEBUG] Throughput: 2.13 tokens/s
+[DEBUG] Response Token Count: 93
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.7708, faithfulness=0.6667
+[DONE] output=results/code_generation_fixed_500.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7441325032413679,
+  "faithfulness": 0.7104538690476191,
+  "elapsed_sec": 1570.0343043096364
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:05<00:05,  5.25s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  2.86s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.22s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 316
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 34.80s
+[DEBUG] Throughput: 4.02 tokens/s
+[DEBUG] Response Token Count: 140
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.8691, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 332
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 25.81s
+[DEBUG] Throughput: 3.25 tokens/s
+[DEBUG] Response Token Count: 84
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.8844, faithfulness=0.3333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 334
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 22.04s
+[DEBUG] Throughput: 2.77 tokens/s
+[DEBUG] Response Token Count: 61
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.8002, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 313
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 25.05s
+[DEBUG] Throughput: 3.27 tokens/s
+[DEBUG] Response Token Count: 82
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.7619, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 271
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.17s
+[DEBUG] Throughput: 3.79 tokens/s
+[DEBUG] Response Token Count: 103
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.8552, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 342
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 51.43s
+[DEBUG] Throughput: 4.36 tokens/s
+[DEBUG] Response Token Count: 224
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.7580, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 331
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.73s
+[DEBUG] Throughput: 3.43 tokens/s
+[DEBUG] Response Token Count: 95
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.8542, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 330
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 20.39s
+[DEBUG] Throughput: 2.60 tokens/s
+[DEBUG] Response Token Count: 53
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.9095, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 322
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 22.10s
+[DEBUG] Throughput: 2.94 tokens/s
+[DEBUG] Response Token Count: 65
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.8318, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 308
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 34.69s
+[DEBUG] Throughput: 4.01 tokens/s
+[DEBUG] Response Token Count: 139
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.7153, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 340
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 19.18s
+[DEBUG] Throughput: 2.35 tokens/s
+[DEBUG] Response Token Count: 45
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9389, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 289
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.81s
+[DEBUG] Throughput: 3.66 tokens/s
+[DEBUG] Response Token Count: 98
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8584, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 332
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 23.91s
+[DEBUG] Throughput: 3.05 tokens/s
+[DEBUG] Response Token Count: 73
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.7973, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 323
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.83s
+[DEBUG] Throughput: 4.04 tokens/s
+[DEBUG] Response Token Count: 157
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.9112, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 327
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 32.36s
+[DEBUG] Throughput: 3.74 tokens/s
+[DEBUG] Response Token Count: 121
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.8572, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 334
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 30.79s
+[DEBUG] Throughput: 3.64 tokens/s
+[DEBUG] Response Token Count: 112
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.8210, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 340
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 41.67s
+[DEBUG] Throughput: 4.10 tokens/s
+[DEBUG] Response Token Count: 171
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.7814, faithfulness=0.6250
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 321
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 12.46s
+[DEBUG] Throughput: 0.72 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.1135, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 342
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 21.78s
+[DEBUG] Throughput: 2.66 tokens/s
+[DEBUG] Response Token Count: 58
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8400, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 343
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 28.86s
+[DEBUG] Throughput: 3.36 tokens/s
+[DEBUG] Response Token Count: 97
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.8790, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 336
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 24.09s
+[DEBUG] Throughput: 2.99 tokens/s
+[DEBUG] Response Token Count: 72
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.8857, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 330
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 25.42s
+[DEBUG] Throughput: 3.19 tokens/s
+[DEBUG] Response Token Count: 81
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.7828, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 317
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.79s
+[DEBUG] Throughput: 4.02 tokens/s
+[DEBUG] Response Token Count: 152
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.8954, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 326
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 25.23s
+[DEBUG] Throughput: 3.21 tokens/s
+[DEBUG] Response Token Count: 81
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8946, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 302
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 11.71s
+[DEBUG] Throughput: 0.77 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 359
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 31.77s
+[DEBUG] Throughput: 3.53 tokens/s
+[DEBUG] Response Token Count: 112
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.8792, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 265
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 10.50s
+[DEBUG] Throughput: 0.86 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.2058, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 330
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.52s
+[DEBUG] Throughput: 4.05 tokens/s
+[DEBUG] Response Token Count: 156
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.8502, faithfulness=0.8571
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 346
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.45s
+[DEBUG] Throughput: 3.95 tokens/s
+[DEBUG] Response Token Count: 152
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.8202, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 323
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 36.97s
+[DEBUG] Throughput: 4.03 tokens/s
+[DEBUG] Response Token Count: 149
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8192, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 331
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 20.65s
+[DEBUG] Throughput: 2.66 tokens/s
+[DEBUG] Response Token Count: 55
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.9020, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 330
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.70s
+[DEBUG] Throughput: 4.25 tokens/s
+[DEBUG] Response Token Count: 190
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.8343, faithfulness=1.0000
+[DONE] output=results/code_generation_structure_128.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7783028119418438,
+  "faithfulness": 0.7018973214285715,
+  "elapsed_sec": 922.97637713328
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.38s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.59s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.71s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1020
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 77.61s
+[DEBUG] Throughput: 2.54 tokens/s
+[DEBUG] Response Token Count: 197
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.7450, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1373
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 79.71s
+[DEBUG] Throughput: 1.57 tokens/s
+[DEBUG] Response Token Count: 125
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.9062, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1335
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 73.49s
+[DEBUG] Throughput: 1.43 tokens/s
+[DEBUG] Response Token Count: 105
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.8066, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1734
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 142.55s
+[DEBUG] Throughput: 2.10 tokens/s
+[DEBUG] Response Token Count: 300
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.5941, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1568
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 71.94s
+[DEBUG] Throughput: 0.67 tokens/s
+[DEBUG] Response Token Count: 48
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.7692, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1330
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 84.91s
+[DEBUG] Throughput: 1.85 tokens/s
+[DEBUG] Response Token Count: 157
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.8175, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 962
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 62.82s
+[DEBUG] Throughput: 2.18 tokens/s
+[DEBUG] Response Token Count: 137
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.8952, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1616
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 107.59s
+[DEBUG] Throughput: 1.74 tokens/s
+[DEBUG] Response Token Count: 187
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.5115, faithfulness=0.4545
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1527
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 80.38s
+[DEBUG] Throughput: 1.12 tokens/s
+[DEBUG] Response Token Count: 90
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.8354, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1117
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 104.56s
+[DEBUG] Throughput: 2.82 tokens/s
+[DEBUG] Response Token Count: 295
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.5901, faithfulness=0.7692
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1504
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 67.98s
+[DEBUG] Throughput: 0.65 tokens/s
+[DEBUG] Response Token Count: 44
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9328, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1362
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 79.95s
+[DEBUG] Throughput: 1.60 tokens/s
+[DEBUG] Response Token Count: 128
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8423, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1350
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 92.74s
+[DEBUG] Throughput: 2.03 tokens/s
+[DEBUG] Response Token Count: 188
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.6892, faithfulness=0.6250
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1640
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 123.10s
+[DEBUG] Throughput: 2.00 tokens/s
+[DEBUG] Response Token Count: 246
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.8117, faithfulness=0.5455
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1471
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 123.54s
+[DEBUG] Throughput: 2.33 tokens/s
+[DEBUG] Response Token Count: 288
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.7445, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1702
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 91.08s
+[DEBUG] Throughput: 1.11 tokens/s
+[DEBUG] Response Token Count: 101
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.8297, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1478
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 110.65s
+[DEBUG] Throughput: 2.11 tokens/s
+[DEBUG] Response Token Count: 233
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.7300, faithfulness=0.6364
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1371
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 54.05s
+[DEBUG] Throughput: 0.17 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.1135, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1511
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 78.14s
+[DEBUG] Throughput: 1.11 tokens/s
+[DEBUG] Response Token Count: 87
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8669, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1616
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 135.74s
+[DEBUG] Throughput: 2.21 tokens/s
+[DEBUG] Response Token Count: 300
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.7099, faithfulness=0.7000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1468
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 58.57s
+[DEBUG] Throughput: 0.15 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.0192, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1513
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 127.52s
+[DEBUG] Throughput: 2.31 tokens/s
+[DEBUG] Response Token Count: 295
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.6574, faithfulness=0.6429
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1133
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 91.86s
+[DEBUG] Throughput: 2.56 tokens/s
+[DEBUG] Response Token Count: 235
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.8401, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1187
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 71.76s
+[DEBUG] Throughput: 1.83 tokens/s
+[DEBUG] Response Token Count: 131
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8909, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1739
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 82.21s
+[DEBUG] Throughput: 0.67 tokens/s
+[DEBUG] Response Token Count: 55
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.8836, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1371
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 110.99s
+[DEBUG] Throughput: 2.34 tokens/s
+[DEBUG] Response Token Count: 260
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.8403, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 985
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 49.71s
+[DEBUG] Throughput: 1.39 tokens/s
+[DEBUG] Response Token Count: 69
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.5359, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1371
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 102.99s
+[DEBUG] Throughput: 2.21 tokens/s
+[DEBUG] Response Token Count: 228
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.7215, faithfulness=0.8571
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 860
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 47.86s
+[DEBUG] Throughput: 1.86 tokens/s
+[DEBUG] Response Token Count: 89
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.8223, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1191
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 58.27s
+[DEBUG] Throughput: 1.13 tokens/s
+[DEBUG] Response Token Count: 66
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8972, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1310
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 51.47s
+[DEBUG] Throughput: 0.17 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.1288, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 1520
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 115.04s
+[DEBUG] Throughput: 2.08 tokens/s
+[DEBUG] Response Token Count: 239
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.7672, faithfulness=0.6667
+[DONE] output=results/code_generation_structure_1500.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7107946870742827,
+  "faithfulness": 0.6743191704129203,
+  "elapsed_sec": 2819.952031735331
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.17s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.22s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.66s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 433
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 52.09s
+[DEBUG] Throughput: 3.94 tokens/s
+[DEBUG] Response Token Count: 205
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.8294, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 459
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 30.50s
+[DEBUG] Throughput: 2.69 tokens/s
+[DEBUG] Response Token Count: 82
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.8882, faithfulness=0.3333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 494
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 54.88s
+[DEBUG] Throughput: 3.77 tokens/s
+[DEBUG] Response Token Count: 207
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.7831, faithfulness=0.6364
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 459
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.52s
+[DEBUG] Throughput: 3.57 tokens/s
+[DEBUG] Response Token Count: 159
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.6696, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 434
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 16.23s
+[DEBUG] Throughput: 0.55 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.1035, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 457
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 39.84s
+[DEBUG] Throughput: 3.39 tokens/s
+[DEBUG] Response Token Count: 135
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.8792, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 491
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.62s
+[DEBUG] Throughput: 2.17 tokens/s
+[DEBUG] Response Token Count: 60
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.8197, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 455
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 24.46s
+[DEBUG] Throughput: 2.09 tokens/s
+[DEBUG] Response Token Count: 51
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.9212, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 484
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 36.16s
+[DEBUG] Throughput: 3.01 tokens/s
+[DEBUG] Response Token Count: 109
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.8074, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 449
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 67.94s
+[DEBUG] Throughput: 4.24 tokens/s
+[DEBUG] Response Token Count: 288
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.6152, faithfulness=0.7000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 450
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 32.41s
+[DEBUG] Throughput: 2.96 tokens/s
+[DEBUG] Response Token Count: 96
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.9085, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 481
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 56.51s
+[DEBUG] Throughput: 3.89 tokens/s
+[DEBUG] Response Token Count: 220
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8187, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 451
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 40.74s
+[DEBUG] Throughput: 3.46 tokens/s
+[DEBUG] Response Token Count: 141
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.7484, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 502
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 36.91s
+[DEBUG] Throughput: 2.98 tokens/s
+[DEBUG] Response Token Count: 110
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.9252, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 409
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.21s
+[DEBUG] Throughput: 3.56 tokens/s
+[DEBUG] Response Token Count: 136
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.7670, faithfulness=0.8333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 498
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 35.17s
+[DEBUG] Throughput: 2.81 tokens/s
+[DEBUG] Response Token Count: 99
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.8640, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 467
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 43.84s
+[DEBUG] Throughput: 3.54 tokens/s
+[DEBUG] Response Token Count: 155
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.6886, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 495
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.22s
+[DEBUG] Throughput: 1.98 tokens/s
+[DEBUG] Response Token Count: 52
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.8616, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 515
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 53.97s
+[DEBUG] Throughput: 3.69 tokens/s
+[DEBUG] Response Token Count: 199
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8163, faithfulness=0.8333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 479
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 54.68s
+[DEBUG] Throughput: 3.84 tokens/s
+[DEBUG] Response Token Count: 210
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.8047, faithfulness=0.8333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 399
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.22s
+[DEBUG] Throughput: 3.60 tokens/s
+[DEBUG] Response Token Count: 134
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.8801, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 452
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 16.93s
+[DEBUG] Throughput: 0.53 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.0745, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 484
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 33.37s
+[DEBUG] Throughput: 2.79 tokens/s
+[DEBUG] Response Token Count: 93
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.9157, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 420
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.63s
+[DEBUG] Throughput: 3.48 tokens/s
+[DEBUG] Response Token Count: 131
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8848, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 418
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 15.71s
+[DEBUG] Throughput: 0.57 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 510
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.00s
+[DEBUG] Throughput: 2.00 tokens/s
+[DEBUG] Response Token Count: 54
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.7759, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 375
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 23.65s
+[DEBUG] Throughput: 2.62 tokens/s
+[DEBUG] Response Token Count: 62
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.6348, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 458
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 55.12s
+[DEBUG] Throughput: 3.90 tokens/s
+[DEBUG] Response Token Count: 215
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.7516, faithfulness=0.5714
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 468
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 48.43s
+[DEBUG] Throughput: 3.63 tokens/s
+[DEBUG] Response Token Count: 176
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.7714, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 490
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 28.18s
+[DEBUG] Throughput: 2.24 tokens/s
+[DEBUG] Response Token Count: 63
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8762, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 479
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 17.88s
+[DEBUG] Throughput: 0.50 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.1288, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 445
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 45.62s
+[DEBUG] Throughput: 3.70 tokens/s
+[DEBUG] Response Token Count: 169
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.8061, faithfulness=1.0000
+[DONE] output=results/code_generation_structure_256.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.722441947271506,
+  "faithfulness": 0.7116274350649352,
+  "elapsed_sec": 1210.3518630377948
+}
+/home/selee/SAC-project/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO] Loading Language Model: LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct
+[INFO] Model Revision: e949c91dec92095908d34e6b560af77dd0c993f8
+[INFO] Infrastructure: CPU-Optimized (16 Cores)
+[INFO] Model Source: /home/selee/.cache/huggingface/hub/models--LGAI-EXAONE--EXAONE-3.5-2.4B-Instruct/snapshots/e949c91dec92095908d34e6b560af77dd0c993f8
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.80s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.60s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.48s/it]
+The model 'ExaoneForCausalLM' is not supported for text-generation. Supported models are ['BartForCausalLM', 'BertLMHeadModel', 'BertGenerationDecoder', 'BigBirdForCausalLM', 'BigBirdPegasusForCausalLM', 'BioGptForCausalLM', 'BlenderbotForCausalLM', 'BlenderbotSmallForCausalLM', 'BloomForCausalLM', 'CamembertForCausalLM', 'LlamaForCausalLM', 'CodeGenForCausalLM', 'CohereForCausalLM', 'CpmAntForCausalLM', 'CTRLLMHeadModel', 'Data2VecTextForCausalLM', 'DbrxForCausalLM', 'ElectraForCausalLM', 'ErnieForCausalLM', 'FalconForCausalLM', 'FuyuForCausalLM', 'GemmaForCausalLM', 'Gemma2ForCausalLM', 'GitForCausalLM', 'GPT2LMHeadModel', 'GPT2LMHeadModel', 'GPTBigCodeForCausalLM', 'GPTNeoForCausalLM', 'GPTNeoXForCausalLM', 'GPTNeoXJapaneseForCausalLM', 'GPTJForCausalLM', 'JambaForCausalLM', 'JetMoeForCausalLM', 'LlamaForCausalLM', 'MambaForCausalLM', 'Mamba2ForCausalLM', 'MarianForCausalLM', 'MBartForCausalLM', 'MegaForCausalLM', 'MegatronBertForCausalLM', 'MistralForCausalLM', 'MixtralForCausalLM', 'MptForCausalLM', 'MusicgenForCausalLM', 'MusicgenMelodyForCausalLM', 'MvpForCausalLM', 'NemotronForCausalLM', 'OlmoForCausalLM', 'OpenLlamaForCausalLM', 'OpenAIGPTLMHeadModel', 'OPTForCausalLM', 'PegasusForCausalLM', 'PersimmonForCausalLM', 'PhiForCausalLM', 'Phi3ForCausalLM', 'PLBartForCausalLM', 'ProphetNetForCausalLM', 'QDQBertLMHeadModel', 'Qwen2ForCausalLM', 'Qwen2MoeForCausalLM', 'RecurrentGemmaForCausalLM', 'ReformerModelWithLMHead', 'RemBertForCausalLM', 'RobertaForCausalLM', 'RobertaPreLayerNormForCausalLM', 'RoCBertForCausalLM', 'RoFormerForCausalLM', 'RwkvForCausalLM', 'Speech2Text2ForCausalLM', 'StableLmForCausalLM', 'Starcoder2ForCausalLM', 'TransfoXLLMHeadModel', 'TrOCRForCausalLM', 'WhisperForCausalLM', 'XGLMForCausalLM', 'XLMWithLMHeadModel', 'XLMProphetNetForCausalLM', 'XLMRobertaForCausalLM', 'XLMRobertaXLForCausalLM', 'XLNetLMHeadModel', 'XmodForCausalLM'].
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 698
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 61.42s
+[DEBUG] Throughput: 3.17 tokens/s
+[DEBUG] Response Token Count: 195
+------------------------------------------------------------
+
+[1/32] code_001: relevance=0.6899, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 717
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 41.09s
+[DEBUG] Throughput: 2.09 tokens/s
+[DEBUG] Response Token Count: 86
+------------------------------------------------------------
+
+[2/32] code_002: relevance=0.8850, faithfulness=0.3333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 676
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 32.65s
+[DEBUG] Throughput: 1.53 tokens/s
+[DEBUG] Response Token Count: 50
+------------------------------------------------------------
+
+[3/32] code_003: relevance=0.8633, faithfulness=0.5000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 718
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 59.49s
+[DEBUG] Throughput: 3.03 tokens/s
+[DEBUG] Response Token Count: 180
+------------------------------------------------------------
+
+[4/32] code_004: relevance=0.6282, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 621
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 22.92s
+[DEBUG] Throughput: 0.39 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[5/32] code_005: relevance=0.1035, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 748
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 56.59s
+[DEBUG] Throughput: 2.79 tokens/s
+[DEBUG] Response Token Count: 158
+------------------------------------------------------------
+
+[6/32] code_006: relevance=0.8202, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 696
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.90s
+[DEBUG] Throughput: 2.03 tokens/s
+[DEBUG] Response Token Count: 79
+------------------------------------------------------------
+
+[7/32] code_007: relevance=0.9022, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 730
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.51s
+[DEBUG] Throughput: 1.79 tokens/s
+[DEBUG] Response Token Count: 69
+------------------------------------------------------------
+
+[8/32] code_008: relevance=0.9035, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 643
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 57.64s
+[DEBUG] Throughput: 3.26 tokens/s
+[DEBUG] Response Token Count: 188
+------------------------------------------------------------
+
+[9/32] code_009: relevance=0.7379, faithfulness=0.8333
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 701
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 62.30s
+[DEBUG] Throughput: 3.11 tokens/s
+[DEBUG] Response Token Count: 194
+------------------------------------------------------------
+
+[10/32] code_010: relevance=0.7335, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 733
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 27.28s
+[DEBUG] Throughput: 0.33 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[11/32] code_011: relevance=0.0929, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 643
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 44.73s
+[DEBUG] Throughput: 2.71 tokens/s
+[DEBUG] Response Token Count: 121
+------------------------------------------------------------
+
+[12/32] code_012: relevance=0.8915, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 662
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 75.08s
+[DEBUG] Throughput: 3.65 tokens/s
+[DEBUG] Response Token Count: 274
+------------------------------------------------------------
+
+[13/32] code_013: relevance=0.7004, faithfulness=0.8750
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 770
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 56.04s
+[DEBUG] Throughput: 2.69 tokens/s
+[DEBUG] Response Token Count: 151
+------------------------------------------------------------
+
+[14/32] code_014: relevance=0.9089, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 656
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 57.83s
+[DEBUG] Throughput: 3.20 tokens/s
+[DEBUG] Response Token Count: 185
+------------------------------------------------------------
+
+[15/32] code_015: relevance=0.7873, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 733
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 46.00s
+[DEBUG] Throughput: 2.33 tokens/s
+[DEBUG] Response Token Count: 107
+------------------------------------------------------------
+
+[16/32] code_016: relevance=0.7521, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 689
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 68.74s
+[DEBUG] Throughput: 3.39 tokens/s
+[DEBUG] Response Token Count: 233
+------------------------------------------------------------
+
+[17/32] code_017: relevance=0.7018, faithfulness=0.5455
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 756
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 45.69s
+[DEBUG] Throughput: 2.14 tokens/s
+[DEBUG] Response Token Count: 98
+------------------------------------------------------------
+
+[18/32] code_018: relevance=0.7949, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 615
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 59.51s
+[DEBUG] Throughput: 3.39 tokens/s
+[DEBUG] Response Token Count: 202
+------------------------------------------------------------
+
+[19/32] code_019: relevance=0.8618, faithfulness=0.7143
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 794
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 87.37s
+[DEBUG] Throughput: 3.43 tokens/s
+[DEBUG] Response Token Count: 300
+------------------------------------------------------------
+
+[20/32] code_020: relevance=0.6269, faithfulness=0.8000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 690
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.72s
+[DEBUG] Throughput: 1.94 tokens/s
+[DEBUG] Response Token Count: 73
+------------------------------------------------------------
+
+[21/32] code_021: relevance=0.9032, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 659
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 62.94s
+[DEBUG] Throughput: 3.37 tokens/s
+[DEBUG] Response Token Count: 212
+------------------------------------------------------------
+
+[22/32] code_022: relevance=0.5808, faithfulness=0.7500
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 645
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 57.39s
+[DEBUG] Throughput: 3.24 tokens/s
+[DEBUG] Response Token Count: 186
+------------------------------------------------------------
+
+[23/32] code_023: relevance=0.8350, faithfulness=0.6000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 648
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 42.85s
+[DEBUG] Throughput: 2.54 tokens/s
+[DEBUG] Response Token Count: 109
+------------------------------------------------------------
+
+[24/32] code_024: relevance=0.8999, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 804
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 30.04s
+[DEBUG] Throughput: 0.30 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[25/32] code_025: relevance=0.0987, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 766
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.59s
+[DEBUG] Throughput: 1.52 tokens/s
+[DEBUG] Response Token Count: 57
+------------------------------------------------------------
+
+[26/32] code_026: relevance=0.7879, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 470
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 26.79s
+[DEBUG] Throughput: 2.28 tokens/s
+[DEBUG] Response Token Count: 61
+------------------------------------------------------------
+
+[27/32] code_027: relevance=0.5460, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 705
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 56.21s
+[DEBUG] Throughput: 2.95 tokens/s
+[DEBUG] Response Token Count: 166
+------------------------------------------------------------
+
+[28/32] code_028: relevance=0.8302, faithfulness=0.6250
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 666
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 38.29s
+[DEBUG] Throughput: 2.14 tokens/s
+[DEBUG] Response Token Count: 82
+------------------------------------------------------------
+
+[29/32] code_029: relevance=0.8615, faithfulness=0.6667
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 761
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 37.61s
+[DEBUG] Throughput: 1.54 tokens/s
+[DEBUG] Response Token Count: 58
+------------------------------------------------------------
+
+[30/32] code_030: relevance=0.8575, faithfulness=1.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 683
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 25.54s
+[DEBUG] Throughput: 0.35 tokens/s
+[DEBUG] Response Token Count: 9
+------------------------------------------------------------
+
+[31/32] code_031: relevance=0.1288, faithfulness=0.0000
+
+------------------------------------------------------------
+[DEBUG] Prompt Token Count: 688
+[DEBUG] Local Inference in Progress...
+------------------------------------------------------------
+[DEBUG] Latency: 62.82s
+[DEBUG] Throughput: 3.23 tokens/s
+[DEBUG] Response Token Count: 203
+------------------------------------------------------------
+
+[32/32] code_032: relevance=0.7917, faithfulness=0.8571
+[DONE] output=results/code_generation_structure_500.json
+{
+  "queries": 32,
+  "k": 5,
+  "answer_mode": "llm",
+  "answer_language": "English",
+  "support_threshold": 0.35,
+  "answer_relevance": 0.7033388971521926,
+  "faithfulness": 0.6858698593073593,
+  "elapsed_sec": 1564.6690781526268
+}
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_fixed_128_metadata.json --index vector_db/faiss_code_fixed_128.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_fixed_128.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_fixed_1500_metadata.json --index vector_db/faiss_code_fixed_1500.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_fixed_1500.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_fixed_256_metadata.json --index vector_db/faiss_code_fixed_256.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_fixed_256.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_fixed_500_metadata.json --index vector_db/faiss_code_fixed_500.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_fixed_500.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_structure_128_metadata.json --index vector_db/faiss_code_structure_128.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_structure_128.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_structure_1500_metadata.json --index vector_db/faiss_code_structure_1500.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_structure_1500.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_structure_256_metadata.json --index vector_db/faiss_code_structure_256.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_structure_256.json
+[RUN] /home/selee/SAC-project/.venv/bin/python /home/selee/SAC-project/scripts/eval_code_generation.py --queries data/eval/queries_code.jsonl --chunks data/processed/code_structure_500_metadata.json --index vector_db/faiss_code_structure_500.index --k 5 --answer-mode llm --answer-language English --support-threshold 0.35 --save-full-transcript --out results/code_generation_structure_500.json
+[DONE] all code generation settings completed
